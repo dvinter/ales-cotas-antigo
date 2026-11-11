@@ -1,0 +1,71 @@
+@{
+    ViewData["Title"] = "Detalhes de Combustível";
+}
+
+<section id="approvedwithouttable"><!--CSS NA PASTA SHARED-->
+    <div class="back-btn">
+        <button onclick="changePage('Fuel','FuelHistory')"><img src="~/imgs/arrow.svg" alt=""
+                srcset=""></button>
+        <h4>Combustível</h4>
+    </div>
+    <span class="line"></span>
+    <div class="box-form">
+        <div class="box-form-content">
+            <div class="col-one">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Gab. Dep. Adilson Espindula</h5>
+                        <div class="btns-impressao">
+                            <span class="px-2"><img src="~/imgs/excel.svg" alt=""></span>
+                            <span class="px-2"><img src="~/imgs/pdf.svg" alt=""></span>
+                        </div>
+                        <!--@@gabinete-->
+                    </div>
+                    <div class="modal-body">
+                        <div class="box-description-modal mb-3">
+                    <div class="box-title">
+                        <p>Combustível</p>
+                    </div>
+                    <span class="line"></span>
+                    <div class="linha-item">
+                        <p>N° da Solicitação:</p>
+                        <p>312039-32</p>
+                    </div>
+                    <div class="linha-item">
+                        <p>Data:</p>
+                        <p id="brdate">2022-03-25T12:00:00-06:30</p>
+                    </div>
+                    <div class="linha-item">
+                        <p>Subitem:</p>
+                        <p>Gasolina</p>
+                    </div>
+                    <div class="linha-item">
+                        <p>Quantidade (L):</p>
+                        <p id="brnumber">3.45</p>
+                    </div>
+                    <div class="linha-item">
+                        <p>Total solicitado:</p>
+                        <p id="brmoney">45.99</p>
+                    </div>
+                    <div class="linha-item">
+                        <p>Total aprovado:</p>
+                        <p id="brmoney">45.99</p>
+                    </div>
+                </div>
+                <form action="">
+                    <div class="form-group mb-3 col col-12">
+                            <label for="inputEmail4">Justificativa <span class="required-dot">*</span></label>
+                            <textarea readonly placeholder="Descreva o motivo do cancelamento ou alterações feitas."
+                                class="form-control" name="" id="" cols="30" rows="3"></textarea>
+                        </div>
+                </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button onclick="changePage('Fuel','FuelHistory')" type="button"
+                            class="btn btn-primary-outline" data-bs-dismiss="modal">Voltar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

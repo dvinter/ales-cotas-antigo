@@ -1,0 +1,104 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Diária";
+
+}
+
+
+<section id="daily">
+    <div class="back-btn">
+        <button onclick="changePage('Requests','Requests')"><img src="~/imgs/arrow.svg" alt="" srcset=""></button>
+        <h4>Diária</h4>
+    </div>
+    <span class="line"></span>
+    <div class="box-form">
+        <div class="box-form-content">
+            <div class="box-etapas mb-4">
+                @if (ViewBag.etapa == 0)
+                {
+                    @:<div class="">
+                }
+                else
+                {
+                    @:<div class="completo">
+                }
+                        <div class="box-with-line ">
+                            <div class="box-with-text ">
+                                <span class="atual"><strong>1</strong></span>
+                                <p><b>Diária</b></p>
+                            </div>
+                            <div class="line-horizontal"></div>
+                        </div>
+                    </div>
+            @if (ViewBag.etapa == 1)
+            {
+                @:<div class="">
+            }
+            else if (ViewBag.etapa > 1)
+            {
+                @:<div class="completo">
+            }
+            else
+            {
+                @:<div class="incompleto">
+            }
+                                <div class="box-with-line">
+                                    <div class="box-with-text">
+                                        <span><strong>2</strong></span>
+                                        <p><b>Viagem</b></p>
+                                    </div>
+                                    <div class="line-horizontal"></div>
+                                </div>
+                            </div>
+        @if (ViewBag.etapa == 2)
+        {
+            @:<div class="">
+        }
+        else if (ViewBag.etapa > 2)
+        {
+            @:<div class="completo">
+        }
+        else
+        {
+            @:<div class="incompleto">
+        }
+                                        <div class="box-with-line">
+                                            <div class="box-with-text">
+                                                <span class=""><strong>3</strong></span>
+                                                <p><b>Pagamento</b></p>
+                                            </div>
+                                            <div class="line-horizontal"></div>
+                                        </div>
+                                    </div>
+
+    @if (ViewBag.etapa == 3)
+    {
+        @:<div class="">
+    }
+    else if (ViewBag.etapa > 3)
+    {
+        @:<div class="completo">
+    }
+    else
+    {
+        @:<div class="incompleto">
+    }
+                                                <div class="box-with-line">
+                                                    <div class="box-with-text">
+                                                        <span><strong>4</strong></span>
+                                                        <p><b>Solicitar</b></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+   
+                                                       
+                                                </div>
+                                                <div class="box-title">
+                                                    <h4>@ViewData["TitleDaily"]</h4>
+                                                    <p>@ViewData["SubTitleDaily"]</p>
+                                                </div>
+    @RenderBody()
+    
+                                            </div>
+                                        </div>
+</section>

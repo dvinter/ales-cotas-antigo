@@ -1,0 +1,25 @@
+﻿@{
+    Layout = "~/Views/Shared/Auth.cshtml";
+}
+
+<div class="col-form">
+    <div class="box-title-col-form pb-2">
+        <h3 class="pb-2">Esqueci minha senha</h3>
+        <p>Esqueceu sua senha? Não se preocupe, basta colocar seu e-mail para recuperar sua senha.</p>
+    </div>
+    <div class="box-col-form-inner">
+        <form action="">
+            <div class="form-group input-login-send">
+                <label for="inputEmail4">E-mail</label>
+                <input type="email" class="form-control" id="inputEmail4" placeholder="Digite seu e-mail">
+                <img src="~/imgs/login-email.svg" alt="">
+            </div>
+            <div class="box-btn">
+                <button class="btn btn-primary">Enviar Email</button>
+            </div>
+            <div class="box-forgot">
+                <a class="" asp-area="" asp-controller="Auth" asp-action="Index">Voltar para login</a>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="DTOs\Users\AlterarUsuarioDto.cs" />
+    <Compile Remove="Servicos\MailSenderService.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="11.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AlesCotas.Domain\AlesCotas.Domain.csproj" />
+    <ProjectReference Include="..\AlesCotas.Infra.Data\AlesCotas.Infra.Data.csproj" />
+  </ItemGroup>
+
+</Project>

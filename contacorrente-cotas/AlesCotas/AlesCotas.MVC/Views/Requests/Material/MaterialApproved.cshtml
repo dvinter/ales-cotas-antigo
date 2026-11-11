@@ -1,0 +1,127 @@
+﻿@model SolicitacaoValidacao
+@{
+    ViewData["Title"] = " Solicitação de material expediente";
+}
+
+<section id="approvedwithouttable">
+    <div class="back-btn">
+        <button onclick="changePage('Material','ListRequestMaterial')">
+            <img src="~/imgs/arrow.svg" alt=""
+                srcset=""></button>
+        <h4>Material expediente</h4>
+    </div>
+    <span class="line"></span>
+    <div class="box-form">
+        <div class="box-form-content">
+            <div class="col-one">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Gab. Dep. Adilson Espindula</h5>
+                        <!--@@gabinete-->
+                    </div>
+                    <div class="modal-body">
+                        <div class="box-title mb-3">
+                            <p><strong>@Model.DataSolicitacao</strong></p>
+                            <!--variavel razor-->
+                            @*<p>Você poderá controlar o número de aprovações de cada um dos itens abaixo.</p>*@
+                            <div class="box-solitacao-modal pt-2">
+                                <p>N° da solicitação: <span>@Model.IDSolicitacao</span>
+                                    <!--variavel razor-->
+                                </p>
+                            </div>
+                        </div>
+                        <form method="post">
+                            <div class="box-table">
+                                <div class="table-responsive">
+                                    <table class="table table-striped align-middle">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Nome</th>
+                                                <th scope="col">Valor Unitário</th>
+                                                <th scope="col">Qtd. Solicitada</th>
+                                                <th scope="col">Qtd. Autorizada</th>
+                                                <th scope="col">Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @for (int i = 0; i < Model.Items.Count; i ++)
+                                            {
+                                                <tr>
+                                                    <td>
+                                                        <span>
+                                                            @Model.Items[i].Produto.Nome
+                                                        </span>
+                                                    </td>
+                                                    <td>@string.Format("{0:C}", @Model.Items[i].ValorUnitario)</td>
+                                                    <td>
+                                                        @Model.Items[i].QuantidadeSolicitada
+                                                    </td>
+                                                    <td >
+                                                        <input style="max-width: 100px" type="number"
+                                                           id="qtd@(Model.Items[i].IDSolicitacaoItem)"
+                                                           asp-for="@Model.Items[i].QuantidadeAutorizada"
+                                                           onkeypress="preventNonNumericalInput(event)" 
+                                                           onchange="atualizarTotal(@Model.Items[i].IDSolicitacaoItem)"
+                                                           oninput="atualizarTotal(@Model.Items[i].IDSolicitacaoItem)"
+                                                           class="form-control text-end" placeholder="Qtd. Aut">
+                                                    </td>
+                                                    <td id="total@(Model.Items[i].IDSolicitacaoItem)">
+                                                        @string.Format("{0:C}", Model.Items[i].ValorUnitario * Model.Items[i].QuantidadeSolicitada)
+                                                    </td>
+                                                </tr>
+                                                <input type="hidden" asp-for="@(Model.IDSolicitacao)">
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="form-group mb-3 col col-12">
+                                <label asp-for="Justificativa">Justificativa </label>
+                        
+                                <textarea placeholder="Descreva o motivo do cancelamento ou alterações feitas."
+                                    class="form-control" cols="30" rows="3" asp-for="Justificativa"></textarea>
+                         <span asp-validation-for="Justificativa" class="text-danger"></span>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button onclick="changePage('Material','ListRequestMaterial')" type="button"
+                                        class="btn btn-primary-outline" data-bs-dismiss="modal">
+                                    Fechar
+                                </button>
+                                <div>
+                                    <button type="submit" asp-action="Negar" class="btn btn-primary btn-cancel-modal">Não aprovar</button>
+                                    <button type="submit" asp-action="Aprovar" class="btn btn-primary">Aprovar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+
+    // Produtos
+    var produtos = @Html.Raw(Json.Serialize(Model.Items));
+
+    function atualizarTotal(id) {
+        
+        // Total element
+        const totalElement = document.getElementById("total" + id);
+        // Quantidade
+        const qtdElement = document.getElementById("qtd" + id);
+
+        const produto = produtos.find(p => p.IDSolicitacaoItem == id).Produto;
+
+        if (parseInt(qtdElement.value) < 0) {
+            totalElement.innerHTML = formatter.format(0);
+            return;
+        }
+
+        var total = parseInt(qtdElement.value) * produto.ValorUnitario;
+
+        totalElement.innerHTML = formatter.format(isNaN(total) ? 0 : total )
+    }
+</script>

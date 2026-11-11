@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Gerencimanto da cota";
+}
+<section id="balance">
+    <h4>Gerencimanto da cota</h4>
+    <span class="line"></span>
+    <div class="box-cards row row-cols-auto ">
+        <div class="col">
+            <div onclick="changePage('Balance','BalanceRegister')" class="box-card">
+                <img src="~/imgs/saldo-cadastrar-icon.svg" alt="">
+                <p>Cadastrar cotas</p>
+            </div>
+        </div>
+        <div class="col">
+            <div onclick="changePage('Balance','BalanceControl')" class="box-card">
+                <img src="~/imgs/saldo-controle-icon.svg" alt="">
+                <p>Controle de cotas</p>
+            </div>
+        </div>
+        <div class="col">
+            <div onclick="changePage('Balance','BalanceImplantation')" class="box-card">
+                <img src="~/imgs/saldo-implantar-icon.svg" alt="">
+                <p>Implantação de saldo</p>
+            </div>
+        </div>
+        <div class="col">
+            <div onclick="changePage('Balance','BalanceHistory')" class="box-card">
+                <img src="~/imgs/saldo-historico-icon.svg" alt="">
+                <p>Historico de cotas</p>
+            </div>
+        </div>
+    </div>
+</section>

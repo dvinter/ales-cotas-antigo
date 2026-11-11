@@ -1,0 +1,93 @@
+#index{
+    width: 100%;
+}
+#index .box-title{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    width: 100%;
+}
+#index .box-title img{
+    margin-right: 10px;
+}
+
+#index .list-boxes .box-small{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 22px;
+    background-color: white;
+    box-shadow: 0px 16px 32px rgba(124, 129, 152, 0.08);
+    border-radius: 8px;
+}
+#index .list-boxes .box-small .box-value-line{
+   display: flex;
+   flex-direction: column;
+}
+#index .list-boxes .box-small .box-value-line p{
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+
+#index .box-box{
+    margin: 22px 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 22px;
+    background-color: white;
+    box-shadow: 0px 16px 32px rgba(124, 129, 152, 0.08);
+    border-radius: 8px;
+}
+
+#index .box-table{
+    width: 100%;
+    
+}
+
+#index .box-table tr td{
+    min-width: 150px;
+    
+}
+#index .box-table tr td p{
+    display: flex;
+    flex-direction: column;  
+}
+#index .box-table tr td p #brmoney{
+    font-size: 13px;
+    color: var(--primary-color);
+}
+#index .box-table tr td:nth-child(1){
+    min-width: 220px;
+    
+}
+#index .box-table tr td:nth-child(1) p{
+    min-width: 220px;
+    font-size: 13px;
+    display: flex;
+    flex-direction: row;
+}
+
+@media only screen and (max-width: 980px) {
+   
+     #index .box-form .box-form-content{
+     
+      padding: 15px;
+      
+      width: 100%;
+  }
+  }
+
+  
+  
+ 

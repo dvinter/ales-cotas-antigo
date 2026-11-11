@@ -1,0 +1,83 @@
+﻿@{
+    ViewData["Title"] = "Requests";
+    ViewBag.rota = "gestor";
+}
+<section id="request">
+    <h4>Solicitações</h4>
+    <span class="line"></span>
+    <div class="box-cards row row-cols-auto ">
+        <div class="col">
+            @if(ViewBag.rota=="gestor"){
+                @:<div onclick="changePage('Fuel','ListRequestFuel')" class="box-card"  >
+            }else{
+                @:<div onclick="changePage('Fuel','Fuel')" class="box-card">
+            }
+            
+            <img src="~/imgs/request-fuel.svg" alt="">
+            <p>Combustível</p>
+        </div>
+        </div>
+       <div class="col">
+          @if(ViewBag.rota=="gestor"){
+            @:<div onclick="changePage('Copy','ListRequestCopy')" class="box-card">
+            }else{
+            @:<div onclick="changePage('Copy','Copy')" class="box-card">
+            }
+            <img src="~/imgs/request-copy.svg" alt="">
+            <p>Cópia Reprográfica</p>
+        </div>
+       </div>
+        <div class="col">
+            @if(ViewBag.rota=="gestor"){
+            @:<div onclick="changePage('Ticket','ListRequestTicket')" class="box-card">
+            }else{
+            @:<div onclick="changePage('Ticket','FormTicket')" class="box-card">
+            }
+            <img src="~/imgs/request-plane.svg" alt="">
+            <p>Passagem áerea</p>
+        </div>
+        </div>
+        <div class="col">
+            @if(ViewBag.rota=="gestor"){
+            @:<div onclick="changePage('Periodicos','ListRequestPeriodicos')" class="box-card">
+            }else{
+            @:<div onclick="changePage('Periodicos','FormPeriodicos')" class="box-card">
+            }
+            <img src="~/imgs/request-periodicals.svg" alt="">
+            <p>Periodicos</p>
+        </div>
+        </div>
+       <div class="col">
+          @if(ViewBag.rota=="gestor"){
+            @:<div onclick="changePage('Daily','ListRequestDaily')" class="box-card">
+            }else{
+            @:<div onclick="changePage('Daily','FormDailyOne')" class="box-card">
+            }
+            <img src="~/imgs/request-calendar.svg" alt="">
+            <p>Diária</p>
+        </div>
+       </div>
+        <div class="col">
+             @if(ViewBag.rota=="gestor"){
+            @:<div onclick="changePage('Material','ListRequestMaterial')" class="box-card">
+            }else{
+            @:<div onclick="changePage('Material','Material')" class="box-card">
+            }
+            <img src="~/imgs/request-material.svg" alt="">
+            <p>Material expediente</p>
+        </div>
+        </div>
+        <div class="col">
+            <div onclick="changePage('Requests','PostRedir')" class="box-card"  >
+                <img src="~/imgs/request-post.svg" alt="">
+                <p>Postagens</p>
+            </div>
+        </div>
+        <div class="col">
+            <div onclick="changePage('Telephony','Telephony')" class="box-card"  >
+                <img src="~/imgs/telephone.svg" alt="">
+                <p>Telefonia</p>
+            </div>
+        </div>
+    </div>
+</section>

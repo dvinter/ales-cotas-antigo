@@ -1,0 +1,115 @@
+﻿@{
+    ViewData["Title"] = "Postagem Simples";
+}
+
+
+<section id="subitem">
+    <div class="box-title">
+        <div class="back-btn">
+            <button onclick="changePage('Requests','PostRedir')"><img src="~/imgs/arrow.svg" alt="" srcset=""></button>
+            <h4>Postagem simples</h4>
+        </div>
+        <div class="box-btn-to-edit">
+            <button onclick="changePage('Post','FormPost')" class="btn btn-primary px-4 py-2">Nova Solicitação</button>
+        </div>
+    </div>
+    <span class="line"></span>
+    <div class="box-cards row row-cols-auto">
+        <div class="col">
+            <div onclick="changePage('Post','PostCreate')">
+                <div class="box-card ">
+                    <div class="card-create">
+                        <div class="line-vertical"></div>
+                        <div class="line-horizontal"></div>
+                    </div>
+                    <p class="pt-5">Adicionar item</p>
+                </div>
+            </div>
+        </div>
+        <!--onclick="changePage('Requests','FormFuel',1)"-->
+
+        <div class="col">
+            <div class="box-card">
+                <div id="btnModalEdit" class="box-edit">
+                    <span></span><span></span><span></span>
+                </div>
+                <div class="text-center">
+                    <p>20g</p>
+                     <h3 id="brmoney">5.99</h3>
+                </div>
+                
+                <div id="modalEdit" class="box-edit-modal display-none-modals">
+                    <ul>
+                        <li onclick="changePage('Post','PostEdit',10)"><img src="~/imgs/edit-icon.svg" alt="">Editar</li>
+                        <li id="deleteFuel"><img src="~/imgs/lixo-icon.svg" alt="">Excluir</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="box-card">
+                <div id="btnModalEdit" class="box-edit">
+                    <span></span><span></span><span></span>
+                </div>
+                <div class="text-center">
+                    <p>20g-30g</p>
+                    <h3 id="brmoney">5.99</h3>
+                </div>
+                
+                <div id="modalEdit" class="box-edit-modal display-none-modals">
+                    <ul>
+                        <li onclick="changePage('Post','PostEdit',10)"><img src="~/imgs/edit-icon.svg" alt="">Editar</li>
+                        <li id="deleteFuel"><img src="~/imgs/lixo-icon.svg" alt="">Excluir</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+
+    (function () {
+
+        const modalEdit = document.querySelectorAll('#modalEdit')
+        const btnModalEdit = document.querySelectorAll('#btnModalEdit')
+        const deleteFuel = document.querySelectorAll('#deleteFuel')
+        let indexAnterior = 0;
+
+        btnModalEdit.forEach((btn, index) => {
+            btn.addEventListener("click", (e) => {
+                if (indexAnterior !== index) {
+                    modalEdit[indexAnterior].classList.add("display-none-modals")
+                }
+                e.stopPropagation()
+                modalEdit[index].classList.toggle("display-none-modals")
+                indexAnterior = index
+            });
+            modalEdit[index].addEventListener("mouseleave", (e) => {
+                e.stopPropagation()
+                e.target.classList.add("display-none-modals")
+            });
+        })
+
+        deleteFuel.forEach((btn, index) => {
+            btn.addEventListener("click", (e) => {
+                deleteSwal('Exluir ou Desativar', 'Deseja excluir ou desativar o item selecionado?').then(result => {
+                    switch (result.isConfirmed) {
+                        case true:
+                           console.log('Deletado')
+                            break;
+                        case false:
+                            console.log('Cancelado')
+                            break;
+                        default:
+                        // code block
+                    }
+                    
+                })
+                e.stopPropagation()
+
+            });
+
+        })
+    })();
+</script>

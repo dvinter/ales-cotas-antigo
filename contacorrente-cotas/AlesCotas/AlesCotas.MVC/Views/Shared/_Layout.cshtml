@@ -1,0 +1,128 @@
+﻿@using AlesCotas.Domain.Constantes
+@using AlesCotas.Domain.Entities
+@using AlesCotas.Infra.Data.Identity
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<Usuario> SignInManager
+@inject UserManager<Usuario> UserManager
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - AlesCotas.MVC</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="~/lib/toastr.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/shared/layout.css">
+    <script src="~/js/globalBefore.js"></script>
+    <style>
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* Firefox */
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+    </style>
+
+</head>
+
+<body>
+    <input type="hidden" id="success" value="@TempData["success"]" />
+    <input type="hidden" id="info" value="@TempData["info"]" />
+    <input type="hidden" id="warning" value="@TempData["warning"]" />
+    <input type="hidden" id="error" value="@TempData["error"]" />
+
+
+
+    <div class="general" id="sidebar">
+        <div class="box-mobile shadow ">
+            <span onclick="sidebarNone()">
+                <img src="~/imgs/hamburgue.svg" alt="">
+            </span>
+        </div>
+
+
+
+        <div class="sidebar shadow ">
+            <div class="title-sidebar">
+                <img src="~/imgs/logo.svg" alt="">
+            </div>
+            <hr>
+            @if (SignInManager.IsSignedIn(User))
+            {
+                var user = await UserManager.GetUserAsync(User);
+                IList<string> roles = user != null ? await UserManager.GetRolesAsync(user) : null;
+                <h6>Menu</h6>
+                <div class="box-sidebar">
+                    <ul class="">
+                        <li onclick="changePage('Home','Index')"
+                        class="@(ViewContext.RouteData.Values["Action"]?.ToString()=="Index" ? "active":"")">
+                            <img src="~/imgs/side-dash.svg" alt="">Dashboard
+                        </li>
+                        <li onclick="changePage('Requests','Requests')"
+                        class="@(ViewContext.RouteData.Values["Action"]?.ToString()=="Requests"  || ViewContext.RouteData.Values["Action"]?.ToString()=="Fuel"  ? "active":"")">
+                            <img src="~/imgs/side-request.svg" alt="">Solicitações
+                        </li>
+                        <li onclick="changePage('History','History')"
+                        class="@(ViewContext.RouteData.Values["Action"]?.ToString()=="History" ? "active":"")">
+                            <img src="~/imgs/side-history.svg" alt=""> Histórico
+                        </li>
+                        <li onclick="changePage('Balance','Balance')"
+                        class="@(ViewContext.RouteData.Values["Action"]?.ToString()=="Balance" ? "active":"")">
+                            <img src="~/imgs/saldo-icon.svg" alt="">Saldo
+                        </li>
+                        <li onclick="changePage('Extract','Extract')"
+                        class="@(ViewContext.RouteData.Values["Action"]?.ToString()=="Extract" ? "active":"")">
+                            <img src="~/imgs/side-extract.svg" alt="">Extrato
+                        </li>
+                        @if (roles?.Any(x => x.Equals(UserRoles.ADMIN)) ?? false)
+                        {
+                            <li onclick="changePage('Users','Users')"
+                        class="@(ViewContext.RouteData.Values["Action"]?.ToString()=="Users" ? "active":"")">
+                                <img src="~/imgs/user-icon.svg" alt="">Usuários
+                            </li>
+                        }
+
+                        <hr class="w-100">
+
+                        <li onclick="changePage('Identity','Account/Manage/ChangePassword')"
+                        class="@(ViewContext.RouteData.Values["Action"]?.ToString()=="ChangePassword" ? "active":"")">
+                            <img src="~/imgs/senha-icon.svg" alt="">Alterar senha
+                        </li>
+                        <partial name="_LoginPartial" />
+                    </ul>
+                </div>
+            }
+        </div>
+
+        <div class="content">
+            <div class="container-fluid">
+                <main role="main" class="pb-3">
+                    @RenderBody()
+                </main>
+            </div>
+        </div>
+    </div>
+    <script src="~/js/vanilla-masker.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/toastr.min.js"></script>
+    <script src="~/js/sweetalert2.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/masks.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+
+</html>

@@ -1,0 +1,188 @@
+﻿@model CopiaReprograficaValidacao
+@{
+    ViewData["Title"] = " Solicitação de cópia reprográfica";
+}
+
+<section id="approvedwithouttable">
+    <div class="back-btn">
+        <button onclick="changePage('Copy','ListRequestCopy')">
+            <img src="~/imgs/arrow.svg" alt=""
+                srcset=""></button>
+        <h4>Cópia Reprográfica</h4>
+    </div>
+    <span class="line"></span>
+    <div class="box-form">
+        <div class="box-form-content">
+            <div class="col-one">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Gab. Dep. Adilson Espindula</h5>
+                        <!--@@gabinete-->
+                    </div>
+                    <div class="modal-body">
+                        <div class="box-title mb-3">
+                            <p>Data: @Model.DataSolicitacao</p>
+                            <!--variavel razor-->
+                            <h4 class="py-2">Cópia Reprográfica</h4>
+                            <div class="box-solitacao-modal pt-2">
+                                <p>N° da solicitação: 
+                                    <span>@Model.IDSolicitacao</span>
+                                    <!--variavel razor-->
+                                </p>
+                            </div>
+                        </div>
+                        <form method="post">
+
+                            <input type="hidden" asp-for="@(Model.IDSolicitacao)">
+                            <div class="box-table">
+                                <div class="table-responsive">
+                                    <table class="table table-striped  table-hove align-middle ">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Tipo</th>
+                                                <th scope="col">Grampeamento</th>
+                                                <th scope="col">Anexo</th>
+                                                <th scope="col">Valor médio</th>
+                                                <th scope="col">Qtd. Solicitada</th>
+                                                <th scope="col">Qtd. Autorizada</th>
+                                                <th scope="col">Valor total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @for(int i = 0; i < Model.Items.Count; i++)
+                                            {
+                                                <input type="hidden" asp-for="@(Model.Items[i].IDSolicitacaoItem)">
+                                                <tr>
+                                                    <td>
+                                                        <span>
+                                                        @Model.Items[i].Tipo
+                                                        </span>
+                                                    </td>
+                                                    <td>
+                                                        <span>
+                                                        @Model.Items[i].Grampeamento
+                                                        </span>
+                                                    </td>
+                                                    <td class="anexo">
+                                                        <a target="_blank" href="@Model.Items[i].Anexo">
+                                                            <img src="~/imgs/anexo.svg" alt="">
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                        @string.Format("{0:C}", @Model.Items[i].ValorMedio)
+                                                    </td>
+                                                    <td>
+                                                        @Model.Items[i].QuantidadeSolicitada
+                                                    </td>
+                                                    <td>
+                                                        <input style="max-width: 100px" type="number"
+                                                           id="qtd@(Model.Items[i].IDSolicitacaoItem)"
+                                                           asp-for="@Model.Items[i].QuantidadeAutorizada"
+                                                           onkeypress="preventNonNumericalInput(event)"
+                                                           onchange="atualizarTotal(@Model.Items[i].IDSolicitacaoItem)"
+                                                           oninput="atualizarTotal(@Model.Items[i].IDSolicitacaoItem)"
+                                                           class="form-control text-end" placeholder="Qtd. Aut">
+                                                    </td>
+                                                    <td id="total@(Model.Items[i].IDSolicitacaoItem)">
+                                                        @string.Format("{0:C}", Model.Items[i].ValorMedio * Model.Items[i].QuantidadeAutorizada)
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                        @*<tbody>
+                                            @for (int i = 0; i < Model.Items.Count; i++)
+                                            {
+                                                <tr>
+                                                    <td>
+                                                        <span>
+                                                            @Model.Items[i].Produto.Nome
+                                                        </span>
+                                                    </td>
+                                                    <td>@string.Format("{0:C}", @Model.Items[i].ValorUnitario)</td>
+                                                    <td>
+                                                        @Model.Items[i].QuantidadeSolicitada
+                                                    </td>
+                                                    <td>
+                                                        <input style="max-width: 100px" type="number"
+                                                           id="qtd@(Model.Items[i].IDSolicitacaoItem)"
+                                                           asp-for="@Model.Items[i].QuantidadeAutorizada"
+                                                           onkeypress="preventNonNumericalInput(event)"
+                                                           onchange="atualizarTotal(@Model.Items[i].IDSolicitacaoItem)"
+                                                           oninput="atualizarTotal(@Model.Items[i].IDSolicitacaoItem)"
+                                                           class="form-control text-end" placeholder="Qtd. Aut">
+                                                    </td>
+                                                    <td id="total@(Model.Items[i].IDSolicitacaoItem)">
+                                                        @string.Format("{0:C}", Model.Items[i].ValorUnitario * Model.Items[i].QuantidadeSolicitada)
+                                                    </td>
+                                                </tr>
+                                                <input type="hidden" asp-for="@(Model.IDSolicitacao)">
+                                                <tr>
+                                                    <td>@item.QuantidadeSolicitada</td>
+                                                    <td>@item.Produto.Nome</td>
+                                                    <td>Grampeamento-E</td>
+                                                    <td class="anexo">
+                                                        <a target="_blank" href="#">
+                                                            <img src="~/imgs/anexo.svg" alt="">
+                                                        </a>
+                                                    </td>
+                                                    <td>@string.Format("{0:C}", item.Produto.ValorUnitario)</td>
+                                                    <td>@string.Format("{0:C}", item.ValorUnitario)</td>
+                                                    <td style="max-width:150px ;">
+                                                        <input oninput="this.value=this.value.replace(/[^0-9]/g,'');"
+                                                           type="number" class="form-control" id="" placeholder="Qtd. Aut">
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>*@
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="form-group mb-3 col col-12">
+                                <label asp-for="Justificativa">Justificativa </label>
+
+                                <textarea placeholder="Descreva o motivo do cancelamento ou alterações feitas."
+                                          class="form-control" cols="30" rows="3" asp-for="Justificativa"></textarea>
+                                <span asp-validation-for="Justificativa" class="text-danger"></span>
+                            </div>
+                            <div class="modal-footer">
+                                <button onclick="changePage('Copy','ListRequestCopy')" type="button"
+                                        class="btn btn-primary-outline" data-bs-dismiss="modal">
+                                    Fechar
+                                </button>
+                                <div>
+                                    <button type="submit" asp-action="Negar" class="btn btn-primary btn-cancel-modal">Não aprovar</button>
+                                    <button type="submit" asp-action="Aprovar" class="btn btn-primary">Aprovar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+
+    // Produtos
+    var items = @Html.Raw(Json.Serialize(Model.Items));
+    console.log("items", items);
+
+    function atualizarTotal(id) {
+
+        // Total element
+        const totalElement = document.getElementById("total" + id);
+        // Quantidade
+        const qtdElement = document.getElementById("qtd" + id);
+
+        const valor = items.find(p => p.idSolicitacaoItem == id).valorMedio;
+
+        if (parseInt(qtdElement.value) < 0) {
+            totalElement.innerHTML = formatter.format(0);
+            return;
+        }
+
+        var total = parseInt(qtdElement.value) * valor;
+
+        totalElement.innerHTML = formatter.format(isNaN(total) ? 0 : total)
+    }
+</script>

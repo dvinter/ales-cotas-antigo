@@ -1,0 +1,44 @@
+﻿@using AlesCotas.Domain.Entities
+@using AlesCotas.Infra.Data.Identity
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<Usuario> SignInManager
+@inject UserManager<Usuario> UserManager
+
+<ul class="navbar-nav">
+    @if (SignInManager.IsSignedIn(User))
+    {
+
+        var user = await UserManager.GetUserAsync(User);
+        var roles = await UserManager.GetRolesAsync(user);
+
+        <li class="logout w-100">
+            <form id="logoutForm" class="form-inline w-100" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                <button id="logout" class="w-100" type="submit"><img src="~/imgs/sair-icon.svg" alt="">Sair</button>
+            </form>
+        </li>
+        <div class="sidebar-footer mt-2">
+            <div class="avatar">
+                <p>UX</p>
+            </div>
+            <div class="box-text-footer">
+                <h5 class="d-inline-block text-truncate" style="max-width: 150px;">
+                    @user.Nome (@roles.FirstOrDefault())
+                </h5>
+                <p class="d-inline-block text-truncate" style="max-width: 150px;">
+                    @user.Email
+                </p>
+            </div>
+        </div>
+
+    }
+    else
+    {
+        @*<li class="nav-item">
+    <a class="nav-link text-dark" id="register" asp-area="Identity" asp-page="/Account/Register">Novo Usuário</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link text-dark" id="login" asp-area="Identity" asp-page="/Account/Login">Entrar</a>
+    </li>*@
+    }
+</ul>

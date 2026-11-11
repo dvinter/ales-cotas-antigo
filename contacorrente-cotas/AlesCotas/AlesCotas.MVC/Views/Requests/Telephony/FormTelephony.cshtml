@@ -1,0 +1,75 @@
+﻿@{
+    ViewData["Title"] = "Telefonia";
+}
+
+
+<section id="telephonyform">
+   <div class="box-title-top">
+        <div class="back-btn">
+            <button onclick="changePage('Telephony','Telephony')"><img src="~/imgs/arrow.svg" alt="" srcset=""></button>
+            <h4>Telefonia</h4>
+        </div>
+    </div>
+    <span class="line"></span>
+    <div class="box-form">
+        <div class="box-form-content">
+            <div class="col-one">
+                <div class="box-title mb-3">
+                    <h4 >Solicitar telefonia </h4>
+                    <p style="max-width:500px ;" class="text-center">Escolha qual gabinete e informe o tipo de linha e período que o gabinete irá usar o aparelho</p>
+                </div>
+                <form action="">
+                    <div class="row">
+                        <div class="form-group mb-3 col-12 ">
+                            <label for="inputEmail4">Gabinete *</label>
+                            <select class="form-select copy" aria-label="Default select example">
+                                <option value="" selected>Selecionar um gabine</option>
+                                <option value="1">Dep. Alexandre Espíndula</option>
+                                <option value="2">Dep. Alexandre Espíndula</option>
+                            </select>
+                        </div>
+                    </div>
+                     <div class="row">
+                        <div class="form-group mb-3 col-12 col-lg-6 col-md-6">
+                            <label for="inputEmail4">Linha telefônica *</label>
+                            <select class="form-select copy" aria-label="Default select example">
+                                <option value="" selected>Selecionar uma linha</option>
+                                <option value="1">Linha A</option>
+                                <option value="2">Linha B</option>
+                            </select>
+                        </div>
+                        <div class="form-group mb-3 col-6 col-lg-3 col-md-3 ">
+                            <label for="inputEmail4">Quantidade *</label>
+                            <input type="number" class="form-control" id="qtd" value="0" placeholder="0">
+                        </div>
+                        <div class="form-group mb-3 col-6 col-lg-3 col-md-3">
+                            <label for="inputEmail4">Valor total R$ *</label>
+                            <input type="text" class="form-control realCoinMask" id="inputEmail4" value="4505" readonly>
+                        </div>
+                        
+                    </div>
+
+                    <div class="row align-items-center">
+                        <div class="form-group mb-3 col-6 col-lg-6 col-md-6">
+                            <label for="inputEmail4">Início *</label>
+                            <input type="date" class="form-control" id="inputEmail4" >
+                        </div>
+                        <div class="form-group mb-3 col-6 col-lg-6 col-md-6">
+                            <label for="inputEmail4">Término *</label>
+                            <input type="date" class="form-control" id="inputEmail4">
+                        </div>
+                    </div>
+                    <div class="btn-request-form">
+                        <button class="btn btn-primary">Solicitar compra</button>
+                        <button type="button" onclick="changePage('Telephony','Telephony')" class="btn btn-primary btn-primary-outline">Voltar</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<script>
+    
+</script>

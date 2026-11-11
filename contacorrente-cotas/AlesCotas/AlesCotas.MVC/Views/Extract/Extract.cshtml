@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Extrato";
+}
+<section id="extract">
+    <h4>Extrato</h4>
+    <span class="line"></span>
+    <div class="box-cards row row-cols-auto ">
+        <div class="col">
+            <div onclick="changePage('Extract','ExtractRequest')" class="box-card">
+                <img src="~/imgs/extractrequest-icon.svg" alt="">
+                <p>Solicitações</p>
+            </div>
+        </div>
+        <div class="col">
+            <div onclick="changePage('Extract','ExtractList')" class="box-card">
+                <img src="~/imgs/extractlist-icon.svg" alt="">
+                <p>Extrato</p>
+            </div>
+        </div>
+    </div>
+</section>

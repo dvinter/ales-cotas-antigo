@@ -1,0 +1,245 @@
+﻿@{
+    ViewData["Title"] = "Controle de cotas";
+}
+
+<section id="balancecontrol">
+    <div class="box-title">
+        <div class="back-btn">
+            <button onclick="changePage('Balance','Balance')"><img src="~/imgs/arrow.svg" alt="" srcset=""></button>
+            <h4>Controle de cotas</h4>
+        </div>
+
+        <div class="box-btn-to-edit">
+            <button onclick="changePage('Balance','BalanceAnticipation')" class="btn btn-primary px-4 py-2">Antecipar cota</button>
+        </div>
+
+    </div>
+    <span class="line"></span>
+    <div class="box-form">
+        <div class="box-form-content">
+            <div class="box-content-title mb-3">
+                <div class="box-text w-100 justify-content-between mb-3">
+                    <div class="d-flex w-100">
+                        <img src="~/imgs/saldo-icon.svg" alt="">
+                        <h4>Resumo de cotas mensais</h4>
+                    </div>
+                    <div class="btns-impressao d-flex">
+                        <span class="px-2"><img src="~/imgs/excel.svg" alt=""></span>
+                        <span class="px-2"><img src="~/imgs/pdf.svg" alt=""></span>
+                    </div>
+                </div>
+                <form class="w-100 ">
+                    <div class="row align-items-end">
+                        <div class="form-group mb-3 col-12 col-md-12 col-lg-6">
+                            <label for="inputEmail4">Filtrar por gabinete *</label>
+                            <input type="text" class="form-control  " id="inputEmail4"
+                                placeholder="Digite para pesquisar">
+                        </div>
+                        <div class="form-group mb-3 col-12 col-md-12 col-lg-4">
+                            <div class="box-radio ">
+                                <div class="form-check radio-selected">
+                                    <div class="form-check-label  todos">
+                                        <input class="form-check-input" type="radio" name="typeTicketRadio"
+                                            id="todos" value="todos" checked>
+                                        <p>Todos</p>
+                                    </div>
+                                </div>
+                                <div class="form-check ">
+                                    <div class="form-check-label antecipadas">
+                                        <input class="form-check-input" type="radio" name="typeTicketRadio"
+                                            id="antecipadas" value="antecipadas">
+                                        <p>Antecipadas</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-12 col-lg-2 mb-3">
+                            <button class="btn btn-primary w-100">Buscar</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <div class="box-table">
+                <div style="margin-bottom: 1rem;" class="table-responsive">
+                    <table class="table table-striped  table-hove align-middle ">
+                        <thead>
+                            <tr>
+                                <th scope="col">Gabinete(s)</th>
+                                <th scope="col">Janeiro </th>
+                                <th scope="col">Fevereiro</th>
+                                <th scope="col">Março</th>
+                                <th scope="col">Abril</th>
+                                <th scope="col">Maio</th>
+                                <th scope="col">Junho</th>
+                                <th scope="col">Julho</th>
+                                <th scope="col">Agosto</th>
+                                <th scope="col">Setembro</th>
+                                <th scope="col">Outubro</th>
+                                <th scope="col">Novembro</th>
+                                <th scope="col">Dezembro</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span class="d-flex flex-column">
+                                        <h6 class="pb-1">Adilson Espindula</h6>
+                                        <p ><b class="pe-1">Saldo atual:</b><span id="brmoney">50.45</span></p>
+                                    </span>
+                                </td>
+                                <td>
+                                    <p>
+                                        <span id="brdate" >2015-03-25T12:00:00-06:30</span>
+                                        <!--fechar aqui--><span id="brmoney"><b>50.45</b></span>
+                                        <!-- só quando tiver antecipação colocar isso fechar um variavel razor tipo ngif-->
+                                    </p>
+                                </td>
+                                <td>
+                                    <p>
+                                        <span id="brdate" >2015-03-25T12:00:00-06:30</span>
+                                        <span id="brmoney"><b>50.45</b></span>
+                                        <!-- só quando tiver antecipação colocar isso fechar um variavel razor tipo ngif-->
+                                    </p>
+                                </td>
+                               <td>
+                                    <p>
+                                        <span id="brdate" >2015-03-25T12:00:00-06:30</span>
+                                        <span id="brmoney"><b>50.45</b></span>
+                                        <!-- só quando tiver antecipação colocar isso fechar um variavel razor tipo ngif-->
+                                    </p>
+                                </td>
+                               <td>
+                                    <p>
+                                        <span id="brdate" >2015-03-25T12:00:00-06:30</span>
+                                        <span id="brmoney"><b>50.45</b></span>
+                                        <!-- só quando tiver antecipação colocar isso fechar um variavel razor tipo ngif-->
+                                    </p>
+                                </td>
+                               <td>
+                                    <p>
+                                        <span id="brdate" >2015-03-25T12:00:00-06:30</span>
+                                        <span id="brmoney"><b>50.45</b></span>
+                                        <!-- só quando tiver antecipação colocar isso fechar um variavel razor tipo ngif-->
+                                    </p>
+                                </td>
+                               <td>
+                                    <p>
+                                        <span id="brdate" >2015-03-25T12:00:00-06:30</span>
+                                        <span id="brmoney"><b>50.45</b></span>
+                                        <!-- só quando tiver antecipação colocar isso fechar um variavel razor tipo ngif-->
+                                    </p>
+                                </td>
+                                <td>
+                                    <p>
+                                        <span id="brdate" ></span>
+                                        <span id="brmoney"><b></b></span>
+                                        <!-- só quando tiver antecipação colocar isso fechar um variavel razor tipo ngif-->
+                                    </p>
+                                </td>
+                               <td>
+                                    <p>
+                                        <span id="brdate" >2015-03-25T12:00:00-06:30</span>
+                                        <span id="brmoney"><b>50.45</b></span>
+                                        <!-- só quando tiver antecipação colocar isso fechar um variavel razor tipo ngif-->
+                                    </p>
+                                </td>
+                               <td>
+                                    <p>
+                                        <span id="brdate" >2015-03-25T12:00:00-06:30</span>
+                                        <span id="brmoney"><b>50.45</b></span>
+                                        <!-- só quando tiver antecipação colocar isso fechar um variavel razor tipo ngif-->
+                                    </p>
+                                </td>
+                                <td>
+                                    <p>
+                                        <span id="brdate" >2015-03-25T12:00:00-06:30</span>
+                                        <span id="brmoney"><b>50.45</b></span>
+                                        <!-- só quando tiver antecipação colocar isso fechar um variavel razor tipo ngif-->
+                                    </p>
+                                </td>
+                                <td>
+                                    <p>
+                                        <span id="brdate" >2015-03-25T12:00:00-06:30</span>
+                                        <span id="brmoney"><b>50.45</b></span>
+                                        <!-- só quando tiver antecipação colocar isso fechar um variavel razor tipo ngif-->
+                                    </p>
+                                </td>
+                                <td>
+                                    <p>
+                                        <span id="brdate" >2015-03-25T12:00:00-06:30</span>
+                                        <span id="brmoney"><b>50.45</b></span>
+                                        <!-- só quando tiver antecipação colocar isso fechar um variavel razor tipo ngif-->
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Adilson Espindula</td>
+                                <td id="brdate">2015-03-25T12:00:00-06:30</td>
+                                <td id="brdate">2015-03-25T12:00:00-06:30</td>
+                                <td id="brdate">2015-03-25T12:00:00-06:30</td>
+                                <td id="brdate">2015-03-25T12:00:00-06:30</td>
+                                <td id="brdate">2015-03-25T12:00:00-06:30</td>
+                                <td id="brdate">2015-03-25T12:00:00-06:30</td>
+                                <td id="brdate"></td>
+                                <td id="brdate">2015-03-25T12:00:00-06:30</td>
+                                <td id="brdate">2015-03-25T12:00:00-06:30</td>
+                                <td id="brdate">2015-03-25T12:00:00-06:30</td>
+                                <td id="brdate">2015-03-25T12:00:00-06:30</td>
+                                <td id="brdate">2015-03-25T12:00:00-06:30</td>
+                            </tr>
+                            <tr>
+                                <td>Adilson Espindula</td>
+                                <td id="brdate">2015-03-25T12:00:00-06:30</td>
+                                <td id="brdate">2015-03-25T12:00:00-06:30</td>
+                                <td id="brdate">2015-03-25T12:00:00-06:30</td>
+                                <td id="brdate">2015-03-25T12:00:00-06:30</td>
+                                <td id="brdate">2015-03-25T12:00:00-06:30</td>
+                                <td id="brdate">2015-03-25T12:00:00-06:30</td>
+                                <td id="brdate"></td>
+                                <td id="brdate">2015-03-25T12:00:00-06:30</td>
+                                <td id="brdate">2015-03-25T12:00:00-06:30</td>
+                                <td id="brdate">2015-03-25T12:00:00-06:30</td>
+                                <td id="brdate">2015-03-25T12:00:00-06:30</td>
+                                <td id="brdate">2015-03-25T12:00:00-06:30</td>
+                            </tr>
+                            <tr>
+                                <td>Adilson Espindula</td>
+                                <td id="brdate">2015-03-25T12:00:00-06:30</td>
+                                <td id="brdate">2015-03-25T12:00:00-06:30</td>
+                                <td id="brdate">2015-03-25T12:00:00-06:30</td>
+                                <td id="brdate">2015-03-25T12:00:00-06:30</td>
+                                <td id="brdate">2015-03-25T12:00:00-06:30</td>
+                                <td id="brdate">2015-03-25T12:00:00-06:30</td>
+                                <td id="brdate"></td>
+                                <td id="brdate">2015-03-25T12:00:00-06:30</td>
+                                <td id="brdate">2015-03-25T12:00:00-06:30</td>
+                                <td id="brdate">2015-03-25T12:00:00-06:30</td>
+                                <td id="brdate">2015-03-25T12:00:00-06:30</td>
+                                <td id="brdate">2015-03-25T12:00:00-06:30</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+     const formCheck = document.querySelectorAll(".form-check")
+        const checkInput = document.querySelectorAll(".form-check input")
+        formCheck[0].addEventListener('click', (e) => {
+            formCheck[1].classList.remove("radio-selected");
+            checkInput[1].checked = false;
+            formCheck[0].classList.add("radio-selected");
+            checkInput[0].checked = true;
+            e.stopPropagation()
+        })
+        formCheck[1].addEventListener('click', (e) => {
+             formCheck[0].classList.remove("radio-selected");
+             checkInput[0].checked = false;
+            formCheck[1].classList.add("radio-selected");
+            checkInput[1].checked = true;
+            e.stopPropagation()
+        })
+</script>

@@ -1,0 +1,137 @@
+#daily{
+    width: 100%;
+}
+
+#daily .box-form{
+    margin-top: 22px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#daily .box-form .box-form-content{
+    display: flex;
+    flex-direction: column;
+    padding: 56px;
+    background-color: white;
+    box-shadow: 0px 16px 32px rgba(124, 129, 152, 0.08);
+    border-radius: 8px;
+    position: relative;
+    width: 90%;
+}
+#daily .box-form .box-form-content .box-etapas{
+    display: flex;
+    justify-content: center;
+}
+
+
+#daily .box-form .box-form-content .box-etapas div .box-with-line{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#daily .box-form .box-form-content .box-etapas div .box-with-line .box-with-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#daily .box-form .box-form-content .box-etapas div .box-with-line .box-with-text p{
+    font-size: 12px;
+}
+#daily .box-form .box-form-content .box-etapas div .line-horizontal {
+    background-color:  #156D9E;
+    height: 2px;
+    width: 40px;
+    border-radius: 8px;
+    position: relative;
+    top: -8px;
+  }
+#daily .box-form .box-form-content .box-etapas span{
+   width: 60px;
+   height: 60px;
+   background-color: white;
+   border-radius: 50px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border: 2px solid var(--primary-color);
+}
+#daily .box-form .box-form-content .box-etapas span strong{
+    color: var(--primary-color);
+    font-size: 18px;
+ }
+#daily .box-form .box-form-content .box-title{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#daily .box-form .box-form-content .box-title h4{
+   margin-bottom: 10px;
+}
+
+#daily .box-form .box-form-content form{
+    margin-top: 20px;
+    width: 100%;
+ }
+
+
+
+
+ @media only screen and (max-width: 992px) {
+    #daily .box-form .box-form-content{
+    
+     padding: 15px;
+     
+     width: 100%;
+    }
+    #daily .box-form .box-form-content .box-etapas div .box-with-line .box-with-text p{
+        font-size: 12px;
+    }
+    #daily .box-form .box-form-content .box-etapas div .line-horizontal {
+        height: 2px;
+        width: 18px;
+        border-radius: 8px;
+        position: relative;
+        top: -6px;
+      }
+      #daily .box-form .box-form-content .box-etapas div .box-with-line .box-with-text p{
+        font-size: 9.1px;
+    }
+    #daily .box-form .box-form-content .box-etapas span{
+       width: 45px;
+       height: 45px;
+    }
+ }
+
+ 
+ #daily .completo .box-with-line .box-with-text span{
+    background-color: var(--primary-color) !important;
+    border: 2px solid var(--primary-color);
+    color: white !important;
+ }
+ #daily .completo .box-with-line .box-with-text span strong{
+    color: white !important;
+ }
+
+ #daily .incompleto .box-with-line .box-with-text span{
+   
+    border: 2px solid var(--opacity-gray) !important;
+ }
+
+ #daily .incompleto .box-with-line .box-with-text span strong{
+    color: var(--opacity-gray) !important;
+ }
+
+ #daily .incompleto .box-with-line .box-with-text p{
+    opacity: 0.5;
+ }
+ #daily  .incompleto .line-horizontal {
+    background-color:  var(--opacity-gray) !important;
+  }

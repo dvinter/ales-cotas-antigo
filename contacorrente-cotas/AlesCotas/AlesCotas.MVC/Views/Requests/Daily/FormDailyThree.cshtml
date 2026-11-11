@@ -1,0 +1,118 @@
+﻿@{
+    Layout = "~/Views/Shared/_RequestDaily.cshtml";
+    ViewBag.etapa = 2;
+    ViewData["TitleDaily"] = "Dados de Pagamento";
+    ViewData["SubTitleDaily"] = "Preencha as informações de pagamento";
+}
+
+
+
+<section id="dailyThree">
+    <form class=" ">
+        <div class="box-radio mb-3">
+            <div class="form-check radio-selected">
+                <div class="form-check-label  deputado">
+                    <input class="form-check-input" type="radio" name="typeTicketRadio" id="ted" value="ted" checked>
+                    <p>D. Conta</p>
+                </div>
+            </div>
+            <div class="form-check ">
+                <div class="form-check-label gabinete">
+                    <input class="form-check-input" type="radio" name="typeTicketRadio" id="pix" value="pix">
+                    <p>Chave Pix</p>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center mb-3">
+            <div class="form-group mb-3 col col-12 col-md-6 col-lg-6">
+                <label for="inputEmail4">Titular da conta <span class="required-dot">*</span></label>
+                <input disabled type="text" class="form-control" id="inputEmail4" value="Naftali Lou da Silva"
+                    placeholder="">
+            </div>
+        </div>
+        <div class="" id="none-ted">
+            <div class="row justify-content-center mb-3">
+                <div class="form-group mb-3 col col-12 col-md-6 col-lg-6">
+                    <label for="inputEmail4">CPF do titular <span class="required-dot">*</span></label>
+                    <input type="text" class="form-control" id="masks" data-js="cpf" value="" placeholder="Digite o CPF">
+                </div>
+            </div>
+            <div class="row justify-content-center mb-3">
+                <div class="form-group mb-3 col col-12 col-md-6 col-lg-6">
+                    <label for="inputEmail4">Nome do Banco <span class="required-dot">*</span></label>
+                    <input type="text" class="form-control" id="inputEmail4" value="" placeholder="Digite o banco">
+                </div>
+            </div>
+            <div class="row justify-content-center mb-3">
+                <div class="form-group mb-3 col col-12 col-md-3 col-lg-3">
+                    <label for="inputEmail4">Agência <span class="required-dot">*</span></label>
+                    <input type="number" class="form-control" id="inputEmail4" value="" placeholder="0000">
+                </div>
+                <div class="form-group mb-3 col col-12 col-md-3 col-lg-3">
+                    <label for="inputEmail4">Conta <span class="required-dot">*</span></label>
+                    <input type="number" class="form-control" id="inputEmail4" value="" placeholder="00000-0">
+                </div>
+            </div>
+            <div class="row justify-content-center mb-3">
+                <div class="form-group mb-3 col col-12 col-md-6 col-lg-6">
+                <label for="inputEmail4">Tipo de conta <span class="required-dot">*</span></label>
+                <select class="form-select copy" aria-label="Default select example">
+                    <option value="" selected>Selecionar</option>
+                    <option value="1">Conta corrente</option>
+                    <option value="2">Poupança</option>
+                </select>
+            </div>
+            </div>
+        </div>
+        <div id="none-pix" class="row justify-content-center mb-3 none">
+                <div class="form-group mb-3 col col-12 col-md-6 col-lg-6">
+                    <label for="inputEmail4">Chave pix <span class="required-dot">*</span></label>
+                    <input type="text" class="form-control" id="inputEmail4" value="" placeholder="Digite sua chave pix">
+                </div>
+            </div>
+        <div class="">
+            <div class="btn-request-form row justify-content-center ">
+                <div class=" col-6 col-md-3 col-lg-3">
+                    <button onclick="changePage('Daily','FormDailyTwo')" type="button"
+                        class="btn btn-primary btn-primary-outline ">Voltar</button>
+                </div>
+                <div class=" col-6 col-md-3 col-lg-3">
+                    <button onclick="changePage('Daily','FormDailyFour')" type="button"
+                        class="btn btn-primary ">Avançar</button>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</section>
+
+<script>
+    (function () {
+
+        const formCheck = document.querySelectorAll(".form-check")
+        const checkInput = document.querySelectorAll(".form-check input")
+        const ted = document.querySelector("#none-ted")
+        const pix = document.querySelector("#none-pix")
+        formCheck[0].addEventListener('click', (e) => {
+            formCheck[1].classList.remove("radio-selected");
+            checkInput[1].checked = false;
+            formCheck[0].classList.add("radio-selected");
+            checkInput[0].checked = true;
+            ted.classList.remove("none");
+            pix.classList.add("none");
+            e.stopPropagation()
+        })
+        formCheck[1].addEventListener('click', (e) => {
+            formCheck[0].classList.remove("radio-selected");
+            checkInput[0].checked = false;
+            formCheck[1].classList.add("radio-selected");
+            checkInput[1].checked = true;
+            ted.classList.add("none");
+            pix.classList.remove("none");
+            e.stopPropagation()
+        })
+
+        
+
+    })();
+</script>

@@ -1,0 +1,260 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+}
+<script src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    google.charts.load('current', { 'packages': ['bar'], 'language': 'pt' });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['Mês', 'Consumo'],
+            ['Jan', 1542],
+            ['Fev', 1170],
+            ['Mar', 660],
+            ['Abr', 1030],
+            ['Maio', -1000],
+            ['Jun', 1170],
+            ['Jul', 1170],
+            ['Ago', 660],
+            ['Set', 1030],
+            ['Out', 1000],
+            ['Nov', 1170],
+            ["Dez", 21.45]
+        ]);
+
+        var options = {
+            legend: { position: "none" },
+            colors: ['#156d9e'],
+            vAxis: {
+                format: 'currency',
+                title: 'Consumo em R$',
+            }
+        }
+
+        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+    }
+</script>
+<section id="index">
+    <div class="box-title">
+        <h4>Dashboard</h4>
+    </div>
+    <span class="line"></span>
+    <div class="box-box">
+        <form class="w-100 ">
+            <div class="row align-items-end">
+                <!--Filtro de gabinete só quando for admin-->
+                <div class="form-group mb-3 col-12 col-md-12 col-lg-12">
+                    <label for="inputEmail4">Gabinete *</label>
+                    <select class="form-select" aria-label="Default select example">
+                        <option value="" selected>Selecione o gabinete </option>
+                        <option value="1">Gestor</option>
+                        <option value="2">Administrador</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row align-items-end">
+                <div class="form-group mb-3 col-12 col-md-12 col-lg-6">
+                    <label for="inputEmail4">Tipo de solicitação *</label>
+                    <select class="form-select" aria-label="Default select example">
+                        <option value="" selected>Selecione o tipo de solicitação </option>
+                        <option value="1">Gestor</option>
+                        <option value="2">Administrador</option>
+                    </select>
+                </div>
+                <div class="form-group mb-3 col-12 col-md-12 col-lg-2">
+                    <label for="inputEmail4">De </label>
+                    <input  type="month" class="form-control  " id="datePicker">
+                </div>
+                <div class="form-group mb-3 col-12 col-md-12 col-lg-2">
+                    <label for="inputEmail4">Até </label>
+                    <input type="month" class="form-control  " id="datePicker">
+                </div>
+                <div class="col-12 col-md-12 col-lg-2 mb-3">
+                    <button class="btn btn-primary w-100">Buscar</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+    <div class="list-boxes row gy-3 justify-content-center">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3 ">
+            <div class="box-small">
+                <div class="box-title">
+                    <img src="~/imgs/total-gasto-icon.svg" alt="">
+                    <h6>Total gasto</h6>
+                </div>
+                <div class="w-100 box-value-line">
+                    <p id="brmoney">30000</p>
+                    <span class="line-primary"></span>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3 ">
+            <div class="box-small">
+                <div class="box-title">
+                    <img src="~/imgs/andamento-icon.svg" alt="">
+                    <h6>Andamento</h6>
+                </div>
+                <div class="w-100 box-value-line">
+                    <p>30000</p>
+                    <span class="line-andamento"></span>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3 ">
+            <div class="box-small">
+                <div class="box-title">
+                    <img src="~/imgs/aprovado-icon.svg" alt="">
+                    <h6>Aprovado</h6>
+                </div>
+                <div class="w-100 box-value-line">
+                    <p>30000</p>
+                    <span class="line-concluido"></span>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3 ">
+            <div class="box-small">
+                <div class="box-title">
+                    <img src="~/imgs/cancelado-icon.svg" alt="">
+                    <h6>Cancelado</h6>
+                </div>
+                <div class="w-100 box-value-line">
+                    <p>30000</p>
+                    <span class="line-cancelado"></span>
+                </div>
+            </div>
+        </div>
+        <!--Não aparecer para gestor-->
+        <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3 ">
+            <div class="box-small">
+                <div class="box-title">
+                    <img src="~/imgs/saldo-icon.svg" alt="">
+                    <h6>Saldo</h6>
+                </div>
+                <div class="w-100 box-value-line">
+                    <p id="brmoney">30000</p>
+                    <span class="line-primary"></span>
+                </div>
+            </div>
+        </div>
+        <!--Não aparecer para gestor-->
+        <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3 ">
+            <div class="box-small">
+                <div class="box-title">
+                    <img src="~/imgs/cancelado-icon.svg" alt="">
+                    <h6>Bloqueado</h6>
+                </div>
+                <div class="w-100 box-value-line">
+                    <p id="brmoney">30000</p>
+                    <span class="line-cancelado"></span>
+                </div>
+            </div>
+        </div>
+        <!--Não aparecer para gestor-->
+        <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3 ">
+            <div class="box-small">
+                <div class="box-title">
+                    <img src="~/imgs/total-gasto-icon.svg" alt="">
+                    <h6>Disponível</h6>
+                </div>
+                <div class="w-100 box-value-line">
+                    <p id="brmoney">30000</p>
+                    <span class="line-concluido"></span>
+                </div>
+            </div>
+        </div>
+        <!--Não aparecer para gestor-->
+        <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3 ">
+            <div class="box-small">
+                <div class="box-title">
+                    <img src="~/imgs/total-gasto-icon.svg" alt="">
+                    <h6>Extorno/Devolução</h6>
+                </div>
+                <div class="w-100 box-value-line">
+                    <p id="brmoney">30000</p>
+                    <span class="line-primary"></span>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+    <div class="box-box w-100">
+        <div class="box-title">
+            <img src="~/imgs/total-gasto-icon.svg" alt="">
+            <h4>Consumo detalhado</h4>
+        </div>
+        <div class="box-dash w-100">
+            <div id="columnchart_material" style="width: 100%; height: 500px;"></div>
+        </div>
+    </div>
+    <div class="box-box">
+        <div class="box-title">
+            <img src="~/imgs/box-icon.svg" alt="">
+            <h4>Últimas solicitações</h4>
+        </div>
+        <div class="box-table">
+            <div style="margin-bottom: 1rem;" class="table-responsive">
+                <table class="table table-striped  table-hove align-middle ">
+                    <thead>
+                        <tr>
+                            <th scope="col">N: da solicitação</th>
+                            <th scope="col">Gabinete</th>
+                            <th scope="col">Tipo de solicitação</th>
+                            <th scope="col">Valor</th>
+                            <th scope="col">Data da solicitação</th>
+                            <th scope="col">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>9928999299</td>
+                            <td>Adilson Espindula</td>
+                            <td>Combustível</td>
+                            <td id="brmoney">520.99</td>
+                            <td id="brdate">2015-03-25T12:00:00-06:30</td>
+                            <td style="width:150px ;"><span class="concluido">Aprovado</span></td>
+                        </tr>
+                        <tr>
+                            <td>9928999299</td>
+                            <td>Adilson Espindula</td>
+                            <td>Combustível</td>
+                            <td id="brmoney">520.99</td>
+                            <td id="brdate">2015-03-25T12:00:00-06:30</td>
+                            <td style="width:150px ;"><span class="cancelado">Cancelado</span></td>
+                        </tr>
+                        <tr>
+                            <td>9928999299</td>
+                            <td>Adilson Espindula</td>
+                            <td>Combustível</td>
+                            <td id="brmoney">520.99</td>
+                            <td id="brdate">2015-03-25T12:00:00-06:30</td>
+                            <td style="width:150px ;"><span class="andamento">Em Andamento</span></td>
+                        </tr>
+                        <tr>
+                            <td>9928999299</td>
+                            <td>Adilson Espindula</td>
+                            <td>Combustível</td>
+                            <td id="brmoney">520.99</td>
+                            <td id="brdate">2015-03-25T12:00:00-06:30</td>
+                            <td style="width:150px ;"><span class="transparencia">Transparência</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    const date = document.querySelectorAll("#datePicker")
+    const data = new Date();
+
+    date[0].valueAsDate = data;
+    date[1].valueAsDate = data;
+</script>

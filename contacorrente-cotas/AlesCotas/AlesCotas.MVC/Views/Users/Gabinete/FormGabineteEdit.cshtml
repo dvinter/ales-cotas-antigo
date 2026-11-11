@@ -1,0 +1,44 @@
+﻿@{
+    ViewData["Title"] = "Gabinete (Editar)";
+}
+
+
+<section id="userForms">
+    <div class="back-btn">
+        <button onclick="changePage('Users','ListGabinete')"><img src="~/imgs/arrow.svg" alt="" srcset=""></button>
+        <h4>Gabinete (Editar)</h4>
+    </div>
+    <span class="line"></span>
+    <div class="box-form">
+        <div class="box-form-content">
+            <div class="col-one">
+                <form action="">
+                    <div class="row">
+                        <div class="form-group mb-3">
+                            <label for="inputEmail4">Nome do Gabinete *</label>
+                            <input type="text" class="form-control " id="inputEmail4" placeholder="Nome do gabinete">
+                        </div>
+                    </div>
+                    <div class="btn-request-form">
+                        <button class="btn btn-primary">Salvar</button>
+                        <button onclick="changePage('Users','ListGabinete')" type="button"
+                            class="btn btn-primary btn-primary-outline">Voltar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    const inputswitch = document.querySelector("#inputswitch");
+    const textswitch = document.querySelector("#textswitch")
+    function changeText(value){
+        if(value===true){
+            console.log("oi")
+            textswitch.innerHTML = 'Ativar'
+            return
+        }
+        
+    }
+</script>

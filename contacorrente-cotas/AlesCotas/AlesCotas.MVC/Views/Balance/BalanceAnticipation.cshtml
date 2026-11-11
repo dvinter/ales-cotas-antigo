@@ -1,0 +1,54 @@
+﻿@{
+    ViewData["Title"] = "Antecipação da cota";
+}
+
+
+<section id="formbalance">
+    <div class="back-btn">
+        <button onclick="changePage('Balance','BalanceControl')"><img src="~/imgs/arrow.svg" alt="" srcset=""></button>
+        <h4>Antecipação da cota</h4>
+    </div>
+    <span class="line"></span>
+    <div class="box-form">
+        <div class="box-form-content">
+            <div class="col-one">
+                <div class="box-title text-center mb-4">
+                    <h4 class="mb-2">Antecipação da cota </h4>
+                    <p>Escolha o gabinete e o mês em você deseja antecipar.</p>
+                </div>
+                <form action="">
+                    <div class="row">
+                        <div class="form-group mb-3 col-12 col-md-12 col-lg-6">
+                            <label for="inputEmail4">Gabinetel *</label>
+                            <select class="form-select" aria-label="Default select example">
+                                    <option value="" selected>Selecione o gabinete </option>
+                                    <option value="1">Gestor</option>
+                                    <option value="2">Administrador</option>
+                                </select>
+                        </div>
+                        <div class="form-group mb-3 col-12 col-md-12 col-lg-6">
+                            <label for="inputEmail4">Data de referência *</label>
+                            <input type="month" id="datePicker" class="form-control  " id="inputEmail4" >
+                        </div>
+                        
+                    </div>
+                    <div class="btn-request-form">
+                        <button class="btn btn-primary">Cadastrar</button>
+                        <button onclick="changePage('Balance','BalanceControl')" type="button" class="btn btn-primary btn-primary-outline">Voltar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    const date = document.getElementById('datePicker')
+    const data = new Date();
+   
+
+    date.valueAsDate = data;
+
+    date.min = `${data.getFullYear()}-${data.getMonth()}`;
+    date.max = `${data.getFullYear()}-12`;
+</script>

@@ -1,0 +1,64 @@
+#dailyThree{
+    width: 100%;
+    
+}
+
+#dailyThree  .box-radio{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+ }
+
+ #dailyThree  .box-radio .form-check{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width:132px;
+    height: 40px;
+    margin: 0 10px;
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    cursor: pointer;
+ }
+ #dailyThree  .box-radio .form-check:hover{
+    background-color: var(--primary-color-ascent);
+ }
+ #dailyThree  .box-radio .form-check label{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   cursor: pointer;
+ }
+ #dailyThree  .box-radio .form-check label .form-check-input{
+   margin-top: 0 !important;
+   margin-right: 5px;
+   cursor: pointer;
+  }
+ #dailyThree  .box-radio .form-check label p{
+    text-transform: uppercase;
+    line-height: 19px;
+    cursor: pointer;
+ }
+
+ #dailyThree 
+ .btn-request-form
+ button:nth-child(1) {
+ width: 100%;
+}
+
+#dailyThree 
+ .btn-request-form
+ button:nth-child(2) {
+ width: 100%;
+ 
+}
+#dailyThree .radio-selected{
+   background-color: var(--primary-color-ascent) !important;
+}
+
+#dailyThree .none{
+   display: none;
+}

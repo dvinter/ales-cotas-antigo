@@ -1,0 +1,44 @@
+#dailyTwo{
+    width: 100%;
+}
+
+
+
+ #dailyTwo .btn-request-form{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+  #dailyTwo .btn-request-form button{
+    width: 100%;
+  }
+  #dailyTwo .btn-request-form button:nth-child(1){
+    margin-right: 10px;
+    width: 100%;
+  }
+  #dailyTwo .btn-request-form button:nth-child(2){
+    margin-left: 10px;
+    width: 100%;
+  }
+
+
+
+ #dailyTwo .box-itens-selected{
+    font-size: 14px;
+ }
+
+ @media only screen and (max-width: 992px) {
+   
+#dailyTwo .btn-add{
+   
+   margin: 0;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  
+#dailyTwo .btn-add{
+ width: 100%;
+ margin: 0;
+}
+}

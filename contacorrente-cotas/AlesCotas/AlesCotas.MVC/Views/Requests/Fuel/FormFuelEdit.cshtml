@@ -1,0 +1,93 @@
+﻿@{
+    ViewData["Title"] = "Combustível";
+}
+
+
+
+<section id="fuel-form">
+    <div class="back-btn">
+        <button onclick="changePage('Fuel','FuelHistory')"><img src="~/imgs/arrow.svg" alt="" srcset=""></button>
+        <h4>Gasolina (Editar)</h4>
+    </div>
+    <span class="line"></span>
+    <div class="box-form">
+        <div class="box-form-content">
+            <div class="col-one">
+                <div class="box-title mb-3">
+                    <div class="box-sub-title pb-1">
+                        <p><img src="~/imgs/form-money.svg" alt=""> Disponível</p>
+                    </div>
+                    <h4 class="totalValue"></h4>
+                </div>
+                <form action="">
+                    <div class="form-group mb-3">
+                        <label for="inputEmail4">Valor médio R$</label>
+                        <input type="text" class="form-control realCoinMask" id="inputEmail4" value="5.99" disabled>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="inputEmail4">Valor solicitado R$</label>
+                        <input type="text" class="form-control realCoinMask requestValue" id="inputEmail4"
+                            placeholder="Digite o valor em R$">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="inputEmail4">Quantidade (L)</label>
+                        <input type="text" class="form-control amount" id="inputEmail4" value="0" disabled>
+                    </div>
+                    <div class="box-updated-value mb-3">
+                        <div class="pb-1">
+                            <p>Saldo atualizado</p>
+                        </div>
+                        <h4 class="updatedValue"></h4>
+                    </div>
+                    <div class="btn-request-form">
+                        
+                        <button type="button" onclick="changePage('Fuel','FuelHistory')" class="btn btn-primary btn-primary-outline">Voltar</button>
+                        <button class="btn btn-primary">Salvar</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-two">
+                <img src="~/imgs/form-fuel.svg" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    (function () {
+
+        const avarageValue = 5.99
+        const saldoTotal = 3500
+
+        updatedValue()
+        totalValue()
+        requestValue()
+
+        function updatedValue(value) {
+            if (typeof value !== "number") {
+                value = 0
+            }
+            const updatedValue = document.querySelector(".updatedValue")
+            let updatedNum = saldoTotal - value;
+            let updatedText = updatedNum.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+            updatedValue.innerHTML = updatedText
+        }
+        function totalValue() {
+            const totalValue = document.querySelector(".totalValue")
+            let totalNum = saldoTotal;
+            let totalText = totalNum.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+            totalValue.innerHTML = totalText
+        }
+
+        function requestValue() {
+            const requestValue = document.querySelector(".requestValue")
+            const amount = document.querySelector(".amount")
+            requestValue.addEventListener("keyup", (e) => {
+                let newRequestValue = cleanMask(e.target.value)//global
+                amount.value = (newRequestValue / avarageValue).toFixed(2).replaceAll(/\./g, ',')
+                updatedValue(newRequestValue)
+                e.stopPropagation()
+            })
+        }
+    })();
+</script>

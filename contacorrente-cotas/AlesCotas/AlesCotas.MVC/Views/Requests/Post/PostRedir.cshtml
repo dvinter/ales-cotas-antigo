@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Postagem";
+    ViewBag.rota = "gestor";
+}
+<!--Mesmo css do request -->
+<section id="request">
+    <div class="back-btn d-flex align-items-center">
+        <button onclick="changePage('Requests','Requests')"><img src="~/imgs/arrow.svg" alt="" srcset=""></button>
+        <h4 style="padding-bottom:0 ;">Postagens</h4>
+    </div>
+    <span class="line"></span>
+    <div class="box-cards row row-cols-auto ">
+        
+        <div class="col">
+              @if(ViewBag.rota=="gestor"){
+                @:<div onclick="changePage('PostAr','ListRequestPostAr')" class="box-card">
+            }else{
+                @:<div onclick="changePage('PostAr','PostAr')" class="box-card">
+            }
+                <img src="~/imgs/post-ar.svg" alt="">
+                <p>Postagens Ar</p>
+            </div>
+        </div>
+        <!--onclick="changePage('Requests','Requests')"-->
+        <div class="col">
+              @if(ViewBag.rota=="gestor"){
+            @:<div onclick="changePage('Post','ListRequestPost')" class="box-card">
+            }else{
+            @:<div onclick="changePage('Post','Post')" class="box-card">
+            }
+                <img src="~/imgs/request-post.svg" alt="">
+                <p>Postagens</p>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,65 @@
+﻿@{
+    ViewData["Title"] = "Histórico";
+}
+<section id="history">
+    <h4>Histórico</h4>
+    <span class="line"></span>
+    <div class="box-cards row row-cols-auto ">
+        <div class="col">
+            <div onclick="changePage('Fuel','FuelHistory')" class="box-card">
+            <img src="~/imgs/request-fuel.svg" alt="">
+            <span class="aviso-historico">Histórico</span>
+            <p>Combustível</p>
+        </div>
+    </div>
+    <div class="col">
+        <div onclick="changePage('Copy','CopyHistory')" class="box-card">
+        <img src="~/imgs/request-copy.svg" alt="">
+        <span class="aviso-historico">Histórico</span>
+        <p>Cópia Reprográfica</p>
+    </div>
+    </div>
+    <div class="col">
+        <div onclick="changePage('Ticket','TicketHistory')" class="box-card">
+        <img src="~/imgs/request-plane.svg" alt="">
+        <span class="aviso-historico">Histórico</span>
+        <p>Passagem áerea</p>
+    </div>
+    </div>
+    <div class="col">
+        <div onclick="changePage('Periodicos','PeriodicosHistory')" class="box-card">
+        <img src="~/imgs/request-periodicals.svg" alt="">
+        <span class="aviso-historico">Histórico</span>
+        <p>Periodicos</p>
+    </div>
+    </div>
+    <div class="col">
+        <div onclick="changePage('Daily','DailyHistory')" class="box-card">
+        <img src="~/imgs/request-calendar.svg" alt="">
+        <span class="aviso-historico">Histórico</span>
+        <p>Diária</p>
+    </div>
+    </div>
+    <div class="col">
+        <div onclick="changePage('Material','MaterialHistory')" class="box-card">
+        <img src="~/imgs/request-material.svg" alt="">
+        <span class="aviso-historico mt-2">Histórico</span>
+        <p>Material expediente</p>
+    </div>
+    </div>
+    <div class="col">
+        <div onclick="changePage('History','PostRedir')" class="box-card">
+            <img src="~/imgs/request-post.svg" alt="">
+            <span class="aviso-historico">Histórico</span>
+            <p>Postagens</p>
+        </div>
+    </div>
+    <div class="col">
+        <div onclick="changePage('Telephony','TelephonyHistory')" class="box-card">
+            <img src="~/imgs/telephone.svg" alt="">
+            <span class="aviso-historico">Histórico</span>
+            <p>Telefonia</p>
+        </div>
+    </div>
+    </div>
+</section>

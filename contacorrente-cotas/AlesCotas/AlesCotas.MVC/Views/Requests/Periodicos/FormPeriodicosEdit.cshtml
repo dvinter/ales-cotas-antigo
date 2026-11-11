@@ -1,0 +1,174 @@
+﻿@{
+    ViewData["Title"] = "Periódicos";
+}
+
+
+<section id="periodicos">
+    <div class="back-btn">
+        <button onclick="changePage('Periodicos','PeriodicosHistory')"><img src="~/imgs/arrow.svg" alt="" srcset=""></button>
+        <h4>Periódicos (Editar)</h4>
+    </div>
+    <span class="line"></span>
+    <div class="box-form">
+        <div class="box-form-content">
+            <div class="col-one">
+                <div class="box-inner">
+                    <div class="box-title mb-3">
+                    <div class="box-sub-title pb-1">
+                        <p><img src="~/imgs/form-money.svg" alt=""> Disponível</p>
+                    </div>
+                    <h4 class="totalValue"></h4>
+                </div>
+                <form  action="">
+                    <div class="form-group mb-3">
+                        <label for="inputEmail4">Nome do item <span class="required-dot">*</span></label>
+                        <input type="text" class="form-control" id="inputEmail4" placeholder="Ex: A Gazeta">
+                    </div>
+                    <div class="row mb-3 ">
+            <div class="form-group">
+                <label for="inputEmail4">Tipo de impressão <span class="required-dot">*</span></label>
+                <select class="form-select copy" aria-label="Default select example">
+                    <option value="" selected>Selecionar</option>
+                    <option value="1">Digital</option>
+                    <option value="2">Físico</option>
+                </select>
+            </div>
+        </div>
+                    <div class="row mb-3">
+                        <div class="form-group col col-12">
+                            <label for="inputEmail4">Descrição do item <span class="required-dot"></span></label>
+                            <textarea placeholder="Descreve os detalhes do item." class="form-control" name="" id=""
+                                cols="30" rows="4"></textarea>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="form-group  col-12 col-md-6 col-lg-6 col-sm-6">
+                            <label for="inputEmail4">Quantidade solicitada <span class="required-dot">*</span> </label>
+                            <input type="number" class="form-control" id="inputEmail4" value="" placeholder="0">
+                        </div>
+                        <div class="form-group col-12 col-md-6 col-lg-6 col-sm-6">
+                            <label for="inputEmail4">Valor R$ <span class="required-dot">*</span></label>
+                            <input type="text" class="form-control realCoinMask" id="inputEmail4" placeholder="0,00">
+                        </div>
+                    </div>
+                    <label class="pb-1">Periodicidade</label>
+                    <div class="box-radio mb-3 row row-cols-auto text-center " id="periodicidade">
+                        <div class="form-check radio-selected col ">
+                            <div class="form-check-label  diaria " >
+                                <input class="form-check-input" type="radio" name="periodicidadeRadio" id="diaria"
+                                    value="diaria" checked>
+                                <p>Diária</p>
+                            </div>
+                        </div>
+                        <div class="form-check col">
+                            <div class="form-check-label mensal" >
+                                <input class="form-check-input" type="radio" name="periodicidadeRadio" id="mensal"
+                                    value="mensal">
+                                <p>Mensal</p>
+                            </div>
+                        </div>
+                        <div class="form-check col">
+                            <div class="form-check-label semestral" >
+                                <input class="form-check-input" type="radio" name="periodicidadeRadio" id="semestral"
+                                    value="semestral">
+                                <p>Semestral</p>
+                            </div>
+                        </div>
+                        <div class="form-check col">
+                            <div class="form-check-label anual " >
+                                <input class="form-check-input" type="radio" name="periodicidadeRadio" id="anual"
+                                    value="anual">
+                                <p>Anual</p>
+                            </div>
+                        </div>
+                    </div>
+                    <label class="pb-1">Tempo de assinatura</label>
+                    <div class="box-radio mb-3 row text-center row-cols-auto " id="assinatura">
+                        <div class="form-check radio-selected col">
+                            <div class="form-check-label  diaria " >
+                                <input class="form-check-input" type="radio" name="assinaturaRadio" id="diaria"
+                                    value="diaria" checked>
+                                <p>Diária</p>
+                            </div>
+                        </div>
+                        <div class="form-check col">
+                            <div class="form-check-label mensal" >
+                                <input class="form-check-input" type="radio" name="assinaturaRadio" id="mensal"
+                                    value="mensal">
+                                <p>Mensal</p>
+                            </div>
+                        </div>
+                        <div class="form-check col">
+                            <div class="form-check-label anual " >
+                                <input class="form-check-input" type="radio" name="assinaturaRadio" id="anual"
+                                    value="anual">
+                                <p>Anual</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn-request-form">
+                        <button class="btn btn-primary">Solicitar compra</button>
+                        <button type="button" onclick="changePage('Periodicos','PeriodicosHistory')"
+                            class="btn btn-primary btn-primary-outline">Voltar</button>
+                    </div>
+                </form>
+                </div>
+            </div>
+            <div class="col-two">
+                <img src="~/imgs/periodicos.svg" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    (function () {
+        const saldoTotal = 3500
+        let varAuxP = 0
+        let varAuxA = 0
+        //Radios
+        const radioBoxP = document.querySelectorAll("#periodicidade .form-check")
+        const radioInputP = document.querySelectorAll("#periodicidade input")
+
+        const radioBoxA = document.querySelectorAll("#assinatura .form-check")
+        const radioInputA = document.querySelectorAll("#assinatura input")
+
+       radioBoxP.forEach((radio, index) => {
+            radio.addEventListener("click", (e) => {
+          if(varAuxP===index){
+                    return
+                }
+                radioBoxP[varAuxP].classList.remove('radio-selected')
+                radioBoxP[index].classList.add('radio-selected')
+                radioInputP[varAuxP].checked = false;
+                radioInputP[index].checked = true;
+                varAuxP = index
+                e.stopPropagation()
+            });  
+        })
+
+        radioBoxA.forEach((radio, index) => {
+            radio.addEventListener("click", (e) => {
+          if(varAuxA===index){
+                    return
+                }
+                radioBoxA[varAuxA].classList.remove('radio-selected')
+                radioBoxA[index].classList.add('radio-selected')
+                radioInputA[varAuxA].checked = false;
+                radioInputA[index].checked = true;
+                varAuxA = index
+                e.stopPropagation()
+            });  
+        })
+
+        totalValue()
+        function totalValue() {
+            const totalValue = document.querySelector(".totalValue")
+            let totalNum = saldoTotal;
+            let totalText = totalNum.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+            totalValue.innerHTML = totalText
+        }
+
+
+    })();
+</script>

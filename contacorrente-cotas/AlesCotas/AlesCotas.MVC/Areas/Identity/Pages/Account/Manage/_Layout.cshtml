@@ -1,0 +1,33 @@
+﻿@{
+    if (ViewData.TryGetValue("ParentLayout", out var parentLayout))
+    {
+        Layout = (string)parentLayout;
+    }
+    else
+    {
+        Layout = "/Areas/Identity/Pages/_Layout.cshtml";
+    }
+}
+
+<section id="password">
+    <div class="box-title">
+        <h4>Alterar senha</h4>
+    </div>
+    <span class="line"></span>
+    <div class="box-box">
+        <div class="row align-items-center justify-content-between">
+            <div class="col col-12 col-md-6 ">
+                @RenderBody()
+            </div>
+            <div class="col col-12 col-md-6 ">
+                <div class="box-img-password">
+                    <img src="~/imgs/modal-password.svg" alt="" srcset="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    @RenderSection("Scripts", required: false)
+}

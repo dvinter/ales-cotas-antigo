@@ -1,0 +1,75 @@
+#listRequestTicket{
+    width: 100%;
+}
+#listRequestTicket .box-title{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+#listRequestTicket .box-title .box-btn-to-edit{
+    margin-bottom: 20px
+}
+
+#listRequestTicket .box-form{
+    margin-top: 22px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#listRequestTicket .box-form .box-form-content{
+    display: flex;
+    flex-direction: column;
+    padding: 56px;
+    background-color: white;
+    box-shadow: 0px 16px 32px rgba(124, 129, 152, 0.08);
+    border-radius: 8px;
+    position: relative;
+    width: 100%;
+}
+#listRequestTicket .box-form .box-form-content .box-content-title {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+#listRequestTicket .box-form .box-form-content .box-content-title .box-text{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#listRequestTicket .box-form .box-form-content .box-content-title .box-text img{
+    margin-right: 10px;
+}
+
+#listRequestTicket .box-form .box-form-content .box-content-title .box-input{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#listRequestTicket  .input-with-icon{
+    margin-right: 20px;
+}
+#listRequestTicket .box-form .box-form-content .footer-table{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+@media only screen and (max-width: 980px) {
+   
+     #listRequestTicket .box-form .box-form-content{
+     
+      padding: 15px;
+      
+      width: 100%;
+  }
+  }

@@ -1,0 +1,56 @@
+﻿@model EditarGabineteDto
+@{
+    bool editMode = Model?.IDGabinete > 0 ;
+    ViewData["Title"] = (editMode ? "Editar" : "Novo") + " Gabinete";
+}
+
+
+<section id="userForms">
+    <div class="back-btn">
+        <button onclick="changePage('Users','ListGabinete')"><img src="~/imgs/arrow.svg" alt="" srcset=""></button>
+        <h4>Novo Gabinete</h4>
+    </div>
+    <span class="line"></span>
+    <div class="box-form">
+        <div class="box-form-content">
+            <div class="col-one">
+                <form asp-action="SalvarGabinete">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="IDGabinete" />
+                    <div class="form-group">
+                        <label for="inputEmail4">Nome do Gabinete *</label>
+                        <input asp-for="Nome" class="form-control" />
+                        <span asp-validation-for="Nome" class="text-danger"></span>
+                        <div class="form-group form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" asp-for="IsAtivo" />Ativo</label>
+                        </div>
+                       
+                    </div>
+                   
+                    <div class="btn-request-form">
+                        <button type="submit" class="btn btn-primary">@(editMode ? "Salvar" : "Cadastrar")</button>
+                        @*<input type="submit" value="@(editMode ? "Salvar" : "Cadastrar")" class="btn btn-primary" />*@
+                        <button onclick="changePage('Users','ListGabinete')" type="button" class="btn btn-primary btn-primary-outline">Voltar</button>
+                    </div>
+                </form>
+
+                @*<form action="">
+                    <div class="row">
+                        <div class="form-group mb-3">
+                            
+                            <input type="text" class="form-control " id="inputEmail4" placeholder="Nome do gabinete">
+                        </div>
+                    </div>
+                    <div class="btn-request-form">
+                        <button class="btn btn-primary">Cadastrar</button>
+                       
+                    </div>
+                </form>*@
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+</script>

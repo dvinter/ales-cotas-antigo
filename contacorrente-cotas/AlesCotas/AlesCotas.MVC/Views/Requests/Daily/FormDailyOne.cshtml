@@ -1,0 +1,81 @@
+﻿@{
+    Layout = "~/Views/Shared/_RequestDaily.cshtml";
+    ViewBag.etapa = 0;
+    ViewData["TitleDaily"] = "Tipo de diária";
+    ViewData["SubTitleDaily"] = "Escolha o palarmentar e o tipo da diária";
+}
+
+<section id="dailyOne">
+    <form class=" ">
+        <div class="box-radio mb-3">
+            <div class="form-check radio-selected">
+                <div class="form-check-label  deputado">
+                    <input class="form-check-input" type="radio" name="typeTicketRadio" id="deputado" value="deputado"
+                        checked>
+                    <p>Deputado</p>
+                </div>
+            </div>
+            <div class="form-check ">
+                <div class="form-check-label gabinete">
+                    <input class="form-check-input" type="radio" name="typeTicketRadio" id="gabinete" value="gabinete">
+                    <p>Gabinete</p>
+                </div>
+            </div>
+        </div>
+        <div id="favorecido" class="row justify-content-center none">
+             <div class="form-group mb-3 col col-12 col-md-6 col-lg-6">
+                <label for="inputEmail4">Favorecido <span class="required-dot">*</span></label>
+                <input type="text" class="form-control" id="inputEmail4" value="" placeholder="Nome do favorecido">
+            </div>
+        </div>
+        <div class="row justify-content-center ">
+            <div class="form-group mb-3 col col-12 col-md-6 col-lg-6">
+                <label for="inputEmail4">Tipo de diária <span class="required-dot">*</span></label>
+                <select class="form-select copy" aria-label="Default select example">
+                    <option value="" selected>Selecionar</option>
+                    <option value="1">Nacional (Sem 20%)</option>
+                    <option value="2">Nacional (Com 20%)</option>
+                    <option value="3">Fora do país</option>
+                </select>
+            </div>
+        </div>
+        <div class="">
+            <div class="btn-request-form row justify-content-center ">
+                <div class=" col-6 col-md-3 col-lg-3">
+                    <button onclick="changePage('Daily','Requests')" type="button"
+                        class="btn btn-primary btn-primary-outline ">Voltar</button>
+                </div>
+                <div class=" col-6 col-md-3 col-lg-3">
+                    <button onclick="changePage('Daily','FormDailyTwo')" type="button"
+                        class="btn btn-primary ">Avançar</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</section>
+
+<script>
+    (function () {
+
+        const formCheck = document.querySelectorAll(".form-check")
+        const checkInput = document.querySelectorAll(".form-check input")
+        const favorecido = document.querySelector("#favorecido")
+        
+        formCheck[0].addEventListener('click', (e) => {
+            formCheck[1].classList.remove("radio-selected");
+            checkInput[1].checked = false;
+            formCheck[0].classList.add("radio-selected");
+            checkInput[0].checked = true;
+            favorecido.classList.add("none")
+            e.stopPropagation()
+        })
+        formCheck[1].addEventListener('click', (e) => {
+            formCheck[0].classList.remove("radio-selected");
+            checkInput[0].checked = false;
+            formCheck[1].classList.add("radio-selected");
+            checkInput[1].checked = true;
+            favorecido.classList.remove("none")
+            e.stopPropagation()
+        })
+    })();
+</script>

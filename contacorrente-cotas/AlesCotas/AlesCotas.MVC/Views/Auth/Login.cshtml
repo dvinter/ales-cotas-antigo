@@ -1,0 +1,31 @@
+﻿@model LoginViewModel
+@{
+    Layout = "~/Views/Shared/Auth.cshtml";
+}
+
+<div class="col-form">
+    <div class="box-title-col-form pb-2">
+        <h3 class="pb-2">Realize seu Login</h3>
+        <p>Realize seu login agora mesmo e entre no sistema da ALES e gerêncie se saldo agora mesmo.</p>
+    </div>
+    <div class="box-col-form-inner">
+        <form asp-controller="Auth" asp-action="Login" method="post">
+            <div class="form-group input-login">
+                <label>N° Matrícula</label>
+                <input class="form-control" id="inputEmail4" placeholder="Digite o número de matrícula">
+                <img src="~/imgs/login-user.svg" alt="">
+            </div>
+            <div class="form-group input-login">
+                <label>Senha</label>
+                <input class="form-control" id="inputEmail4" placeholder="Digite sua senha">
+                <img src="~/imgs/login-pass.svg" alt="">
+            </div>
+            <div class="box-btn">
+                <button type="submit" class="btn btn-primary">Entrar no sistema </button>
+            </div>
+            <div class="box-forgot">
+                <a class="" asp-area="" asp-controller="Auth" asp-action="Forgot">Esqueci minha senha</a>
+            </div>
+        </form>
+    </div>
+</div>

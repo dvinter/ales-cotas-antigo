@@ -1,0 +1,64 @@
+﻿@{
+    ViewData["Title"] = "Usuário (Editar)";
+}
+
+
+<section id="userForms">
+    <div class="back-btn">
+        <button onclick="changePage('Users','ListUsers')"><img src="~/imgs/arrow.svg" alt="" srcset=""></button>
+        <h4>Usuário (Editar)</h4>
+    </div>
+    <span class="line"></span>
+    <div class="box-form">
+        <div class="box-form-content">
+            <div class="col-one">
+                <form action="">
+                    
+                    <div class="row">
+                        <div class="form-group mb-3 col-12 col-md-12 col-lg-5">
+                            <label for="inputEmail4">Nome </label>
+                            <input type="text" class="form-control " id="inputEmail4" placeholder="Nome" readonly>
+                        </div>
+                        <div class="form-group mb-3 col-12 col-md-12 col-lg-5">
+                            <label for="inputEmail4">E-mail </label>
+                            <input type="text" class="form-control " id="inputEmail4" placeholder="E-mail" readonly>
+                        </div>
+                        <div class="form-group mb-3 col-12 col-md-12 col-lg-2">
+                            <label for="inputEmail4">N: da matrícula </label>
+                            <input type="text" class="form-control " id="inputEmail4" placeholder="N: da matrícula" readonly>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group mb-3 col-12 col-md-12 col-lg-4">
+                            <label for="inputEmail4">Setor de lotação </label>
+                            <input type="text" class="form-control " id="inputEmail4" placeholder="Nome" readonly>
+                        </div>
+                        <div class="form-group mb-3 col-12 col-md-12 col-lg-3">
+                            <label for="inputEmail4">Perfil do usuário *</label>
+                            <select class="form-select" aria-label="Default select example">
+                                    <option value="" selected>Selecione um Perfil</option>
+                                    <option value="1">Gestor</option>
+                                    <option value="2">Administrador</option>
+                                </select>
+                        </div>
+                        <div class="form-group mb-3 col-12 col-md-12 col-lg-5">
+                            <label for="inputEmail4">Gabinete vinculado *</label>
+                            <select class="form-select" aria-label="Default select example">
+                                    <option value="" selected>Selecione um gabinete</option>
+                                    <option value="1">Ativo</option>
+                                    <option value="2">Inativo</option>
+                                </select>
+                        </div>
+                    </div>
+                    <div class="btn-request-form">
+                        <button class="btn btn-primary">Cadastrar</button>
+                        <button onclick="changePage('Users','ListUsers')" type="button" class="btn btn-primary btn-primary-outline">Voltar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+</script>

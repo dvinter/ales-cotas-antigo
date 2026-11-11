@@ -1,0 +1,140 @@
+﻿@{
+    ViewData["Title"] = " Solicitação de telefonia";
+}
+
+<section id="approvedwithouttable">
+    <div class="back-btn">
+        <button onclick="changePage('Telephony','TelephonyHistory')">
+            <img src="~/imgs/arrow.svg" alt=""
+                srcset=""></button>
+        <h4>Telefonia</h4>
+    </div>
+    <span class="line"></span>
+    <div class="box-form">
+        <div class="box-form-content">
+            <div class="col-one">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Gab. Dep. Adilson Espindula</h5>
+                        <div class="btns-impressao">
+                            <span class="px-2"><img src="~/imgs/excel.svg" alt=""></span>
+                            <span class="px-2"><img src="~/imgs/pdf.svg" alt=""></span>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                <div class="box-title mb-3">
+                    <p>Data: <span id="brdate">2015-03-25T12:00:00-06:30</span></p>
+                    <!--variavel razor-->
+                    <h4 class="py-2">Telefonia</h4>
+                    <p>VVocê poderá consultar dados e fazer impressão.</p>
+                    <div class="box-solitacao-modal pt-2">
+                        <p>N° da solicitação: <span>2183-12</span>
+                            <!--variavel razor-->
+                        </p>
+                    </div>
+                </div>
+                <div class="box-description-modal mb-3">
+
+                    <div class="linha-item">
+                        <p>Linha telefônica:</p>
+                        <p>Linha A</p>
+                    </div>
+                    <div class="linha-item">
+                         <p>Qtd. Inicial:</p>
+                         <p>5</p>
+                    </div>
+                     <div class="linha-item">
+                         <p>Qtd. Atual:</p>
+                         <p>5</p>
+                    </div>
+                    <div class="linha-item">
+                        <p>Início:</p>
+                        <p><span id="brdate">2015-03-25T12:00:00-06:30</span></p>
+                    </div>
+                    <div class="linha-item">
+                        <p>Término :</p>
+                        <p><span id="brdate">2015-03-25T12:00:00-06:30</span></p>
+                    </div>
+                    <div class="linha-item">
+                        <p title="Mensal">Valor total inicial:</p>
+                        <p id="brmoney">6800</p>
+                    </div>
+                    <div class="linha-item">
+                        <p title="Mensal">Valor total atual:</p>
+                        <p id="brmoney">6800</p>
+                    </div>
+                </div>
+                <!--Alterações lista-->
+                <h6 class="mb-2">Lista de alterações:</h6>
+                <div class="box-description-modal mb-3">
+                    <div class="linha-item">
+                        <p>Data da alteração:</p>
+                        <p><span id="brdate">2015-03-25T12:00:00-06:30</span></p>
+                    </div>
+                    <div class="linha-item">
+                         <p>Qtd atualizada:</p>
+                         <p>5</p>
+                    </div>
+                    <div class="linha-item">
+                        <div class="linha-item-text">
+                            <p>Justificativa:</p>
+                            <p>Acima de tudo, é fundamental ressaltar que a complexidade dos estudos efetuados exige a
+                                precisão e a definição do retorno esperado a longo prazo.</p>
+                        </div>
+                    </div>
+                     <div class="linha-item">
+                        <p title="Mensal">Valor total atualizado:</p>
+                        <p id="brmoney">6800</p>
+                    </div>
+                </div>
+                <div class="box-description-modal mb-3">
+                    <div class="linha-item">
+                        <p>Data da alteração:</p>
+                        <p><span id="brdate">2015-03-25T12:00:00-06:30</span></p>
+                    </div>
+                    <div class="linha-item">
+                         <p>Qtd atualizada:</p>
+                         <p>5</p>
+                    </div>
+                    <div class="linha-item">
+                        <div class="linha-item-text">
+                            <p>Justificativa:</p>
+                            <p>Acima de tudo, é fundamental ressaltar que a complexidade dos estudos efetuados exige a
+                                precisão e a definição do retorno esperado a longo prazo.</p>
+                        </div>
+                    </div>
+                     <div class="linha-item">
+                        <p title="Mensal">Valor total atualizado:</p>
+                        <p id="brmoney">6800</p>
+                    </div>
+                </div>
+                <form action="">
+                    <div class="row">
+                        <div class="form-group mb-3 col-12 col-md-12">
+                            <label for="inputEmail4">Qtd Atualizada *</label>
+                            <input oninput="this.value=this.value.replace(/[^0-9]/g,'');" type="number"
+                                class="form-control" id="inputEmail4" placeholder="Quantidade de linhas">
+                        </div>
+                        <div class="form-group mb-3 col col-12">
+                            <label for="inputEmail4">Justificativa <span class="required-dot">*</span></label>
+                            <textarea placeholder="Descreva o motivo do cancelamento ou alterações feitas."
+                                class="form-control" name="" id="" cols="30" rows="3"></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+                    <div class="modal-footer">
+                        <button onclick="changePage('Telephony','TelephonyHistory')" type="button"
+                            class="btn btn-primary-outline" data-bs-dismiss="modal">Voltar</button>
+                        <div>
+                            <button type="button" class="btn btn-primary">Salvar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+
+</script>

@@ -1,0 +1,65 @@
+
+@import url('general.css');
+
+
+@import url('shared/approvedwithouttable.css');
+
+
+@import url('request/request.css');
+@import url('request/subitem.css');
+@import url('request/subitemcreate.css');
+
+@import url('request/fuel/listRequestFuel.css');
+@import url('request/fuel/formFuel.css');
+
+@import url('request/copy/formCopy.css');
+@import url('request/copy/listRequestCopy.css');
+
+@import url('request/ticket/formTicket.css');
+@import url('request/ticket/listRequestTicket.css');
+
+@import url('request/periodicos/formPeriodicos.css');
+@import url('request/periodicos/formPeriodicosGestor.css');
+@import url('request/periodicos/listRequestPeriodicos.css');
+
+@import url('request/daily/requestDaily.css');
+@import url('request/daily/formDailyOne.css');
+@import url('request/daily/formDailyTwo.css');
+@import url('request/daily/formDailyThree.css');
+@import url('request/daily/formDailyFour.css');
+@import url('request/daily/listRequestDaily.css');
+
+@import url('request/post/listRequestPost.css');
+
+@import url('request/material/listRequestMaterial.css');
+@import url('request/material/formMaterial.css');
+
+@import url('request/telephony/formTelephony.css');
+
+
+/*History*/
+@import url('history/history.css');
+@import url('history/historyEdit.css');
+@import url('history/historyEditTable.css');
+@import url('history/historyTable.css');
+
+
+/*Users*/
+@import url('users/users.css');
+@import url('users/usersTable.css');
+@import url('users/usersForms.css');
+
+
+/*Balance*/
+@import url('balance/balance.css');
+@import url('balance/formbalance.css');
+@import url('balance/balancecontrol.css');
+
+/*Extract*/
+@import url('extract/extract.css');
+@import url('extract/extractlist.css');
+@import url('extract/extractrequest.css');
+
+/*Home*/
+@import url('home/index.css');
+@import url('home/password.css');

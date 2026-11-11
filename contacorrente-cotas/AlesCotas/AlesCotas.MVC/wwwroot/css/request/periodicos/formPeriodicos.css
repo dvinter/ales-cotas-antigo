@@ -1,0 +1,136 @@
+#periodicos{
+    width: 100%;
+}
+
+
+#periodicos .box-form{
+    margin-top: 22px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#periodicos .box-form .box-form-content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 56px;
+    background-color: white;
+    box-shadow: 0px 16px 32px rgba(124, 129, 152, 0.08);
+    border-radius: 8px;
+    position: relative;
+    width: 90%;
+}
+#periodicos .box-form .box-form-content .col-one {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid var(--border);
+}
+#periodicos .box-form .box-form-content .col-one .box-inner {
+    margin-right: 1rem;
+}
+#periodicos .box-form .box-form-content .col-two {
+    width:45%
+}
+#periodicos .box-form .box-form-content .col-two img {
+    width:100%
+}
+@media only screen and (max-width: 1500px) {
+    #periodicos .box-form .box-form-content .col-two img {
+        width:100%;
+     }
+  }
+
+#periodicos .box-form .box-form-content .col-one .box-title{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 0;
+    background-color: var(--fundo);
+    border-radius: 0.5rem;
+    border: 1px solid var(--border);
+}
+
+#periodicos .box-form .box-form-content .col-one .box-title h4{
+   color: var(--primary-color);
+}
+#periodicos .box-form .box-form-content .col-one .box-title p{
+    color: var(--label);
+ }
+#periodicos .box-form .box-form-content .col-one .box-title .box-sub-title{
+   display: flex;
+   align-items: center;
+ }
+
+ #periodicos .box-form  form .box-radio .form-check{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width:100px;
+    height: 30px;
+    margin: 0 10px;
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    margin-bottom: 10px;
+ }
+ #periodicos .box-form  form .box-radio .form-check div{
+    font-size: 13px;
+    
+ }
+ #periodicos .box-form .box-form-content form .box-radio .form-check:hover{
+    background-color: var(--primary-color-ascent);
+ }
+
+
+
+  #periodicos .box-form .box-form-content .col-one .btn-request-form{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+  #periodicos .box-form .box-form-content .col-one .btn-request-form button{
+    width: 100%;
+  }
+  #periodicos .box-form .box-form-content .col-one .btn-request-form button:nth-child(1){
+    margin-right: 10px;
+    width: 100%;
+  }
+  #periodicos .box-form .box-form-content .col-one .btn-request-form button:nth-child(2){
+    margin-left: 10px;
+    width: 100%;
+  }
+  @media only screen and (max-width: 980px) {
+    #periodicos .box-form .box-form-content .col-one {
+      width: 100%;
+      border-right: 0px solid var(--border);
+  }
+  #periodicos .box-form .box-form-content .col-one .box-inner {
+    margin-right: 0rem;
+}
+    #periodicos .box-form .box-form-content .col-two {
+        width:0%
+    }
+    #periodicos .box-form .box-form-content .col-two img {
+        display: none;
+     }
+     #periodicos .box-form .box-form-content{
+     
+      padding: 15px;
+      
+      width: 100%;
+  }
+  }
+
+  #periodicos .box-form .box-form-content form .box-radio .form-check.radio-selected{
+    background-color: var(--primary-color-ascent);
+  }

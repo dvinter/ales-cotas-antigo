@@ -1,0 +1,138 @@
+@{
+    ViewData["Title"] = "Detalhes de Periodicos";
+    ViewBag.batata = true;
+}
+
+<section id="approvedwithouttable">
+    <!--CSS NA PASTA SHARED-->
+    <div class="back-btn">
+        <button onclick="changePage('Periodicos','PeriodicosHistory')"><img src="~/imgs/arrow.svg" alt=""
+                srcset=""></button>
+        <h4>Periodicos</h4>
+    </div>
+    <span class="line"></span>
+    <div class="box-form">
+        <div class="box-form-content">
+            <div class="col-one">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Gab. Dep. Adilson Espindula</h5>
+                        <div class="btns-impressao">
+                            <span class="px-2"><img src="~/imgs/excel.svg" alt=""></span>
+                            <span class="px-2"><img src="~/imgs/pdf.svg" alt=""></span>
+                        </div>
+                        <!--@@gabinete-->
+                    </div>
+                    <div class="modal-body">
+                        <div class="box-title mb-3">
+                            <p>Data: <span id="brdate">2015-03-25T12:00:00-06:30</span></p>
+                            <!--variavel razor-->
+                            <h4 class="py-2">Periodicos</h4>
+                            <p>Você poderá consultar dados e fazer impressão.</p>
+                            <div class="box-solitacao-modal pt-2">
+                                <p>N° da solicitação: <span>2183-12</span>
+                                    <!--variavel razor-->
+                                </p>
+                            </div>
+                        </div>
+                        <!--Se for uma solicitação do gabinete exibir esse-->
+                        <div class="box-description-modal mb-3">
+                            <div class="linha-item">
+                                <p>Qtd. Solicitada:</p>
+                                <p>5</p>
+                            </div>
+                            <div class="linha-item">
+                                <p>Qtd. Aprovada:</p>
+                                <p>10</p>
+                            </div>
+                            <div class="linha-item">
+                                <p>Periódico:</p>
+                                <p>A gazeta</p>
+                            </div>
+                            <div class="linha-item">
+                                <div class="linha-item-text">
+                                    <p>Descrição do item:</p>
+                                    <p>Acima de tudo, é fundamental ressaltar que a complexidade dos estudos efetuados
+                                        exige a
+                                        precisão e a definição do retorno esperado a longo prazo.</p>
+                                </div>
+                            </div>
+                            <div class="linha-item">
+                                <p>Tipo de impressão:</p>
+                                <p>Digital</p>
+                            </div>
+                            <div class="linha-item">
+                                <p>Periodicidade:</p>
+                                <p>Diária</p>
+                            </div>
+                            <div class="linha-item">
+                                <p>Assinatura:</p>
+                                <p>Mensal</p>
+                            </div>
+
+                            <div class="linha-item">
+                                <p>Valor total:</p>
+                                <p id="brmoney">6800</p>
+                            </div>
+                            <div class="linha-item">
+                                <div class="linha-item-text">
+                                    <p>Justificativa alteração/cancelamento:</p>
+                                    <p>Acima de tudo, é fundamental ressaltar que a complexidade dos estudos efetuados
+                                        exige a
+                                        precisão e a definição do retorno esperado a longo prazo.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Se for uma solicitação do gestor exibir esse-->
+                        <div class="box-description-modal mb-3">
+                            <div class="linha-item">
+                                <p>Qtd. Solicitada:</p>
+                                <p>5</p>
+                            </div>
+                            <div class="linha-item">
+                                <p>Qtd. Aprovada:</p>
+                                <p>10</p>
+                            </div>
+                            <div class="linha-item">
+                                <p>Periódico:</p>
+                                <p>A gazeta</p>
+                            </div>
+                            <div class="linha-item">
+                                <div class="linha-item-text">
+                                    <p>Descrição do item:</p>
+                                    <p>Acima de tudo, é fundamental ressaltar que a complexidade dos estudos efetuados
+                                        exige a
+                                        precisão e a definição do retorno esperado a longo prazo.</p>
+                                </div>
+                            </div>
+                            <div class="linha-item">
+                                <p>Parcelas:</p>
+                                <p id="brnumber">12</p>
+                            </div>
+                            <div class="linha-item">
+                                <p>Tipo de impressão:</p>
+                                <p>Digital</p>
+                            </div>
+                            <div class="linha-item">
+                                <p>Valor total da assinatura:</p>
+                                <p id="brmoney">6800</p>
+                            </div>
+                            <div class="linha-item">
+                                <div class="linha-item-text">
+                                    <p>Justificativa alteração/cancelamento:</p>
+                                    <p>Acima de tudo, é fundamental ressaltar que a complexidade dos estudos efetuados
+                                        exige a
+                                        precisão e a definição do retorno esperado a longo prazo.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button onclick="changePage('Periodicos','PeriodicosHistory')" type="button"
+                            class="btn btn-primary-outline" data-bs-dismiss="modal">Voltar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

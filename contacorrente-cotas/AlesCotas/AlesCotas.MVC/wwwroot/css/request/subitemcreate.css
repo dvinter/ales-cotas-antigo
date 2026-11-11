@@ -1,0 +1,113 @@
+#subitemcreate{
+    width: 100%;
+}
+
+#subitemcreate .box-form{
+    margin-top: 22px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#subitemcreate .box-form .box-form-content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 56px;
+    background-color: white;
+    box-shadow: 0px 16px 32px rgba(124, 129, 152, 0.08);
+    border-radius: 8px;
+    position: relative;
+    width: 90%;
+}
+#subitemcreate .box-form .box-form-content .col-one {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+#subitemcreate .box-form .box-form-content .col-two {
+    width:50%
+}
+#subitemcreate .box-form .box-form-content .col-two img {
+    width:100%
+}
+@media only screen and (max-width: 1500px) {
+    #subitemcreate .box-form .box-form-content .col-two img {
+        width:100%;
+     }
+  }
+
+#subitemcreate .box-form .box-form-content .col-one .box-title{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    
+}
+
+
+#subitemcreate .box-form .box-form-content .col-one .box-title p{
+    color: var(--label);
+ }
+#subitemcreate .box-form .box-form-content .col-one .box-title .box-sub-title{
+   display: flex;
+   align-items: center;
+ }
+
+ #subitemcreate .box-form .box-form-content .col-one .box-updated-value{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+    background-color: var(--fundo);
+    border-radius: 0.5rem;
+    border: 1px solid var(--border);
+  }
+  #subitemcreate .box-form .box-form-content .col-one .box-updated-value p {
+    color: var(--label);
+  }
+  #subitemcreate .box-form .box-form-content .col-one .box-updated-value h4{
+    color: var(--primary-color);
+  }
+
+  #subitemcreate .box-form .box-form-content .col-one .btn-request-form{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+  #subitemcreate .box-form .box-form-content .col-one .btn-request-form button{
+    width: 100%;
+  }
+  #subitemcreate .box-form .box-form-content .col-one .btn-request-form button:nth-child(1){
+    margin-right: 10px;
+    width: 100%;
+  }
+  #subitemcreate .box-form .box-form-content .col-one .btn-request-form button:nth-child(2){
+    margin-left: 10px;
+    width: 100%;
+  }
+  @media only screen and (max-width: 980px) {
+    #subitemcreate .box-form .box-form-content .col-one {
+      width: 100%;
+  }
+    #subitemcreate .box-form .box-form-content .col-two {
+        width:0%
+    }
+    #subitemcreate .box-form .box-form-content .col-two img {
+        display: none;
+     }
+     #subitemcreate .box-form .box-form-content{
+     
+      padding: 15px;
+      
+      width: 100%;
+  }
+  }

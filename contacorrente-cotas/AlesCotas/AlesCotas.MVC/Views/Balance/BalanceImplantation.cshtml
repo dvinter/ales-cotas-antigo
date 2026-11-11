@@ -1,0 +1,54 @@
+﻿@{
+    ViewData["Title"] = "Implantação de saldo";
+}
+
+
+<section id="formbalance">
+    <div class="back-btn">
+        <button onclick="changePage('Balance','Balance')"><img src="~/imgs/arrow.svg" alt="" srcset=""></button>
+        <h4>Implantação de saldo</h4>
+    </div>
+    <span class="line"></span>
+    <div class="box-form">
+        <div class="box-form-content">
+            <div class="col-one">
+                <div class="box-title text-center mb-4">
+                    <h4 class="mb-2">Implantação de saldo </h4>
+                    <p>Escolha o gabinete que terá seu saldo transferido abaixo.</p>
+                </div>
+                <form action="">
+                    <div class="row">
+                        <div class="form-group mb-3 col-12 col-md-12 col-lg-9">
+                            <label for="inputEmail4">Gabinetel *</label>
+                            <select class="form-select" aria-label="Default select example">
+                                    <option value="" selected>Selecione o gabinete </option>
+                                    <option value="1">Gestor</option>
+                                    <option value="2">Administrador</option>
+                                </select>
+                        </div>
+                        <div class="form-group mb-3 col-12 col-md-12 col-lg-3">
+                            <label for="inputEmail4">Saldo atual *</label>
+                            <input type="text"  class="form-control  realCoinMask" placeholder="0,00" id="inputEmail4" readonly>
+                        </div>
+                        
+                    </div>
+                    <div class="row">
+                        <div class="form-group mb-3 col-12 col-md-12 col-lg-12">
+                            <label for="inputEmail4">Gabinete que receberá o saldo *</label>
+                            <select class="form-select" aria-label="Default select example">
+                                    <option value="" selected>Selecione o gabinete </option>
+                                    <option value="1">Gestor</option>
+                                    <option value="2">Administrador</option>
+                                </select>
+                        </div>
+                    </div>
+                    <div class="btn-request-form">
+                        <button class="btn btn-primary">Implantar</button>
+                        <button onclick="changePage('Balance','Balance')" type="button" class="btn btn-primary btn-primary-outline">Voltar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+

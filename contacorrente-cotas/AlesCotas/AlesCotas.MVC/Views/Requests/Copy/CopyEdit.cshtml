@@ -1,0 +1,51 @@
+﻿@model AlesCotas.Application.DTOs.ProdutoDTO
+@{
+    ViewData["Title"] = "Cópia repografica ";
+}
+
+<section id="subitemcreate">
+    <div class="back-btn">
+        <button onclick="changePage('Copy','Copy')"><img src="~/imgs/arrow.svg" alt="" srcset=""></button>
+        <h4>Cópia reprográfica</h4>
+    </div>
+    <span class="line"></span>
+    <div class="box-form">
+        <div class="box-form-content">
+            <div class="col-one">
+                    <div class="box-title mb-3">
+                    <h4>Editar item </h4><!-- Adicionar variavel razor aqui -->
+                    <p style="max-width:500px ;" class="text-center">Você poderá criar ou editar um subitem para cópia repografica</p>
+                </div>
+                <form asp-action="Editar" method="post">
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <input type="hidden" asp-for="IDProduto" />
+                    <input type="hidden" asp-for="IDProdutoTipo" />
+                    <input type="hidden" asp-for="Ativo" />
+                    <div class="form-group mb-3 mt-4">
+                        <label asp-for="Nome">Nome *</label>
+                        <input type="text" asp-for="Nome" class="form-control" placeholder="Digite o nome do item">
+                        <span asp-validation-for="Nome" class="text-danger"></span>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label asp-for="ValorUnitario">Valor médio *</label>
+                        <input asp-for="ValorUnitario" type="text" class="form-control realCoinMask"
+                               placeholder="Digite o valor em R$">
+                        <span asp-validation-for="ValorUnitario" class="text-danger"></span>
+                    </div>
+                    <div class="form-group mb-4">
+                        <label asp-for="Descricao">Descrição</label>
+                        <textarea asp-for="Descricao" placeholder="Adicione uma descrição" class="form-control" name="" id="" cols="30"
+                                  rows="5"></textarea>
+                    </div>
+                    <div class="btn-request-form">
+                        <button type="button" onclick="changePage('Fuel','Fuel')" class="btn btn-primary btn-primary-outline">Voltar</button>
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-two">
+                <img src="~/imgs/form-fuel.svg" alt="">
+            </div>
+        </div>
+    </div>
+</section>

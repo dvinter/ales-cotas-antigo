@@ -1,0 +1,86 @@
+﻿@{
+    ViewData["Title"] = "Extrato";
+}
+
+<section id="extractlist">
+    <div class="box-title">
+        <div class="back-btn">
+            <button onclick="changePage('Extract','Extract')"><img src="~/imgs/arrow.svg" alt="" srcset=""></button>
+            <h4>Extrato</h4>
+        </div>
+
+    </div>
+    <span class="line"></span>
+    <div class="box-form">
+        <div class="box-form-content">
+            <div class="box-content-title mb-3 ">
+                <div class="box-text w-100 justify-content-between mb-3">
+                    <div class="d-flex w-100">
+                        <img src="~/imgs/side-extract.svg" alt="">
+                        <h4>Extrato</h4>
+                    </div>
+                    <div class="btns-impressao d-flex">
+                        <span class="px-2"><img src="~/imgs/excel.svg" alt=""></span>
+                        <span class="px-2"><img src="~/imgs/pdf.svg" alt=""></span>
+                    </div>
+                </div>
+                <form class="w-100 ">
+                    <div class="row align-items-end">
+                        <!--Filtro de gabinete só quando for admin-->
+                        <div class="form-group mb-3 col-12 col-md-12 col-lg-12">
+                            <label for="inputEmail4">Gabinete *</label>
+                            <select class="form-select" aria-label="Default select example">
+                                <option value="" selected>Selecione o gabinete </option>
+                                <option value="1">Gestor</option>
+                                <option value="2">Administrador</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row align-items-end">
+                        <div class="form-group mb-3 col-12 col-md-12 col-lg-5">
+                            <label for="inputEmail4">De </label>
+                            <input type="date" class="form-control  " id="inputEmail4">
+                        </div>
+                        <div class="form-group mb-3 col-12 col-md-12 col-lg-5">
+                            <label for="inputEmail4">Até </label>
+                            <input type="date" class="form-control  " id="inputEmail4">
+                        </div>
+                        <div class="col-12 col-md-12 col-lg-2 mb-3">
+                            <button class="btn btn-primary w-100">Buscar</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <div class="box-table">
+                <div style="margin-bottom: 1rem;" class="table-responsive">
+                    <table class="table table-striped  table-hove align-middle ">
+                        <thead>
+                            <tr>
+                                <th scope="col">Data </th>
+                                <th scope="col">Lançamento</th>
+                                <th scope="col">Valor</th>
+                                <th scope="col">Saldo </th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td id="brdate">2015-03-25T12:00:00-06:30</td>
+                                <td>Combustível</td>
+                                <td id="brmoney">520.99</td>
+                                <td id="brmoney">520.99</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="box-saldo mb-3">
+                    <div class="box-sub-saldo pb-1">
+                        <p><img src="~/imgs/form-money.svg" alt=""> Disponível</p>
+                    </div>
+                    <h4 id="brmoney">2500.70</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

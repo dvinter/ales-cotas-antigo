@@ -1,0 +1,107 @@
+﻿@model AlesCotas.Application.DTOs.Cadastro.SolicitacaoItemCadastroDTO
+@{
+    ViewData["Title"] = "Combustível";
+}
+<section id="fuel-form">
+    <div class="back-btn">
+        <button onclick="changePage('Fuel','Fuel')"><img src="~/imgs/arrow.svg" alt="" srcset=""></button>
+        <h4>Gasolina</h4>
+    </div>
+    <span class="line"></span>
+    <div class="box-form">
+        <div class="box-form-content">
+            <div class="col-one">
+                <div class="box-title mb-3">
+                    <div class="box-sub-title pb-1">
+                        <p><img src="~/imgs/form-money.svg" alt="">Saldo Disponível</p>
+                    </div>
+                    <h4 id="totalValue" class="totalValue"></h4>
+                </div>
+                <form asp-action="CadastrarSolicitacao" method="post">
+                    <input type="hidden" asp-for="IDProduto" value="@ViewBag.Produto.IDProduto">
+
+                    <div class="form-group mb-3">
+                        <label>Valor médio R$</label>
+                        <input type="text" class="form-control realCoinMask" id="valorProduto" 
+                        value="@(ViewBag.Produto.ValorUnitario)" disabled>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label asp-for="ValorUnitario">Valor solicitado R$</label>
+                        <input id="valorUnitario" asp-for="ValorUnitario" type="text" class="form-control realCoinMask" id="inputEmail4"
+                               placeholder="Digite o valor em R$" oninput="calcularTotal()">
+                        <span asp-validation-for="ValorUnitario" class="text-danger"></span>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label>Quantidade (L)</label>
+                        <input type="text" class="form-control amount" id="quantidade" value="0" disabled>
+                    </div>
+                    <div class="box-updated-value mb-3">
+                        <div class="pb-1">
+                            <p>Saldo Atualizado</p>
+                        </div>
+                        <h4 class="updatedValue"></h4>
+                    </div>
+                    <div class="btn-request-form">
+                        <button type="submit" class="btn btn-primary">Solicitar</button>
+                        <button type="button" onclick="changePage('Fuel','Fuel')" class="btn btn-primary btn-primary-outline">Voltar</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-two">
+                <img src="~/imgs/form-fuel.svg" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+
+
+
+    function calcularTotal() {
+
+        const valorUnitario = document.getElementById("valorUnitario").value;
+        const valorProduto = document.getElementById("valorProduto").value;
+
+        console.log(cleanMask(valorUnitario), cleanMask(valorProduto));
+
+        document.getElementById("quantidade").value = (cleanMask(valorUnitario) / cleanMask(valorProduto)).toFixed(2).replace('.',',');
+    }
+
+    //(function () {
+
+    //    const avarageValue = 5.99
+    //    const saldoTotal = 3500
+
+    //    updatedValue()
+    //    totalValue()
+    //    requestValue()
+
+    //    function updatedValue(value) {
+    //        if (typeof value !== "number") {
+    //            value = 0
+    //        }
+    //        const updatedValue = document.querySelector(".updatedValue")
+    //        let updatedNum = saldoTotal - value;
+    //        let updatedText = updatedNum.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+    //        updatedValue.innerHTML = updatedText
+    //    }
+    //    function totalValue() {
+    //        const totalValue = document.querySelector(".totalValue")
+    //        let totalNum = saldoTotal;
+    //        let totalText = totalNum.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+    //        totalValue.innerHTML = totalText
+    //    }
+
+    //    function requestValue() {
+    //        const requestValue = document.querySelector(".requestValue")
+    //        const amount = document.querySelector(".amount")
+    //        requestValue.addEventListener("keyup", (e) => {
+    //            let newRequestValue = cleanMask(e.target.value)//global
+    //            amount.value = (newRequestValue / avarageValue).toFixed(2).replaceAll(/\./g, ',')
+    //            updatedValue(newRequestValue)
+    //            e.stopPropagation()
+    //        })
+    //    }
+    //})();
+</script>

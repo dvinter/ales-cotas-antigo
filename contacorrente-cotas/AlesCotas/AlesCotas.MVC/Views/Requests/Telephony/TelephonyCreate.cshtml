@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Telefonia";
+}
+
+<section id="subitemcreate">
+    <div class="back-btn">
+        <button onclick="changePage('Telephony','Telephony')"><img src="~/imgs/arrow.svg" alt="" srcset=""></button>
+        <h4>Telefonia</h4>
+    </div>
+    <span class="line"></span>
+    <div class="box-form">
+        <div class="box-form-content">
+            <div class="col-one">
+                    <div class="box-title mb-3">
+                    <h4>Cadastrar novo item </h4><!-- Adicionar variavel razor aqui -->
+                    <p style="max-width:500px ;" class="text-center">Você poderá criar ou editar um subitem para Telefonia</p>
+                </div>
+                <form action="">
+                    <div class="form-group mb-3 mt-4">
+                        <label for="inputEmail4">Item *</label>
+                        <input type="text" class="form-control" id="inputEmail4" placeholder="Digite o nome do item">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="inputEmail4">Valor médio *</label>
+                        <input type="text" class="form-control realCoinMask" id="inputEmail4"
+                            placeholder="Digite o valor em R$">
+                    </div>
+                    
+                    <div class="form-group mb-4">
+                        <label for="inputEmail4">Descrição</label>
+                        <textarea placeholder="Adicione uma descrição" class="form-control" name="" id="" cols="30"
+                            rows="5"></textarea>
+                    </div>
+                    <div class="btn-request-form">
+                        <button type="button" onclick="changePage('Telephony','Telephony')" class="btn btn-primary btn-primary-outline">Voltar</button>
+                        <button class="btn btn-primary">Salvar</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-two">
+                <img src="~/imgs/form-fuel.svg" alt="">
+            </div>
+        </div>
+    </div>
+</section>
